@@ -1,0 +1,7 @@
+﻿.. |img-81|     image:: ../../../Images/manual_html_m446d47db.png
+   :height: 102
+   :width: 523
+.. :align: left
+.. :border: 0
+.. :name: Graphic116
+

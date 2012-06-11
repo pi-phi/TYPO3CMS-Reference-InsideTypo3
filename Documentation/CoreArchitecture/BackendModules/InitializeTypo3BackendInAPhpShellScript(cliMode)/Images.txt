@@ -1,0 +1,7 @@
+﻿.. |img-88|     image:: ../../../Images/manual_html_572e0d09.png
+   :height: 92
+   :width: 349
+.. :align: left
+.. :border: 0
+.. :name: Graphic119
+

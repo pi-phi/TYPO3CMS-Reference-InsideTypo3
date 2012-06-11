@@ -1,0 +1,7 @@
+﻿.. |img-134|    image:: ../../Images/manual_html_m180e03da.png
+   :height: 412
+   :width: 485
+.. :align: left
+.. :border: 0
+.. :name: Graphic36
+

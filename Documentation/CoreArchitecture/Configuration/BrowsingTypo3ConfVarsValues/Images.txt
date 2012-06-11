@@ -1,0 +1,7 @@
+﻿.. |img-31|     image:: ../../../Images/manual_html_m51aec099.png
+   :height: 539
+   :width: 466
+.. :align: left
+.. :border: 0
+.. :name: Graphic35
+

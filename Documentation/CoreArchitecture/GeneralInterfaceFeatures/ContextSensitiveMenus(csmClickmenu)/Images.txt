@@ -1,0 +1,14 @@
+﻿.. |img-145|    image:: ../../../Images/manual_html_m73bee197.png
+   :height: 279
+   :width: 309
+.. :align: left
+.. :border: 0
+.. :name: Graphic63
+
+.. |img-146|    image:: ../../../Images/manual_html_ced5c07.png
+   :height: 185
+   :width: 454
+.. :align: left
+.. :border: 0
+.. :name: Graphic90
+
