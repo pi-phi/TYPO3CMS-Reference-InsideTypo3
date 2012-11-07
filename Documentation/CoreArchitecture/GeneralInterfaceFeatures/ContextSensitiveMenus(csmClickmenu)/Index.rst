@@ -1,18 +1,10 @@
-﻿.. include:: Images.txt
-
 .. ==================================================
 .. FOR YOUR INFORMATION
 .. --------------------------------------------------
 .. -*- coding: utf-8 -*- with BOM.
 
-.. ==================================================
-.. DEFINE SOME TEXTROLES
-.. --------------------------------------------------
-.. role::   underline
-.. role::   typoscript(code)
-.. role::   ts(typoscript)
-   :class:  typoscript
-.. role::   php(code)
+.. include:: ../../../Includes.txt
+.. include:: Images.txt
 
 
 Context Sensitive Menus (CSM / "Clickmenu")
@@ -36,16 +28,12 @@ Configuration options in User TSconfig
 """"""""""""""""""""""""""""""""""""""
 
 User TSconfig offers configuration options for the menu. Here are some
-examples:
-
-::
+examples::
 
    options.contextMenu.options.leftIcons = 1
 
 If set, the icons in the clickmenu appear to the left instead of
-right.
-
-::
+right. ::
 
    options.contextMenu.pageTree.disableItems = view, edit
 
@@ -85,9 +73,7 @@ will show the menu items in a horizontal order:
 |img-146|
 
 You can also enable this to happen even if the CSM HTML is also
-written to the <div> layers. Just set this "User TSconfig":
-
-::
+written to the <div> layers. Just set this "User TSconfig"::
 
    options.contextMenu.options.alwaysShowClickMenuInTopFrame = 1
 

@@ -1,18 +1,9 @@
-﻿
-
 .. ==================================================
 .. FOR YOUR INFORMATION
 .. --------------------------------------------------
 .. -*- coding: utf-8 -*- with BOM.
 
-.. ==================================================
-.. DEFINE SOME TEXTROLES
-.. --------------------------------------------------
-.. role::   underline
-.. role::   typoscript(code)
-.. role::   ts(typoscript)
-   :class:  typoscript
-.. role::   php(code)
+.. include:: ../../../Includes.txt
 
 
 Global variables, Constants and Classes
@@ -42,13 +33,13 @@ This is the classes already included after having included "init.php":
 
    Class
          Class
-   
+
    Included in
          Included in
-   
+
    Description
          Description
-   
+
    Avail. in FE
          Avail. in FE
 
@@ -57,13 +48,13 @@ This is the classes already included after having included "init.php":
 
    Class
          t3lib\_div
-   
+
    Included in
          init.php
-   
+
    Description
-   
-   
+
+
    Avail. in FE
          YES
 
@@ -72,13 +63,13 @@ This is the classes already included after having included "init.php":
 
    Class
          t3lib\_extMgm
-   
+
    Included in
          init.php
-   
+
    Description
-   
-   
+
+
    Avail. in FE
          YES
 
@@ -87,13 +78,13 @@ This is the classes already included after having included "init.php":
 
    Class
          t3lib\_db
-   
+
    Included in
          init.php
-   
+
    Description
-   
-   
+
+
    Avail. in FE
          YES
 
@@ -102,13 +93,13 @@ This is the classes already included after having included "init.php":
 
    Class
          t3lib\_userauth
-   
+
    Included in
          init.php
-   
+
    Description
-   
-   
+
+
    Avail. in FE
          YES
 
@@ -117,13 +108,13 @@ This is the classes already included after having included "init.php":
 
    Class
          t3lib\_userauthgroup
-   
+
    Included in
          init.php
-   
+
    Description
-   
-   
+
+
    Avail. in FE
          -
 
@@ -132,13 +123,13 @@ This is the classes already included after having included "init.php":
 
    Class
          t3lib\_beuserauth
-   
+
    Included in
          init.php
-   
+
    Description
-   
-   
+
+
    Avail. in FE
          -
 
@@ -147,13 +138,13 @@ This is the classes already included after having included "init.php":
 
    Class
          t3lib\_iconworks
-   
+
    Included in
          init.php
-   
+
    Description
-   
-   
+
+
    Avail. in FE
          -
 
@@ -162,13 +153,13 @@ This is the classes already included after having included "init.php":
 
    Class
          t3lib\_befunc
-   
+
    Included in
          init.php
-   
+
    Description
-   
-   
+
+
    Avail. in FE
          -
 
@@ -177,13 +168,13 @@ This is the classes already included after having included "init.php":
 
    Class
          t3lib\_cs
-   
+
    Included in
          init.php
-   
+
    Description
-   
-   
+
+
    Avail. in FE
          YES
 
@@ -192,14 +183,14 @@ This is the classes already included after having included "init.php":
 
    Class
          *gzip\_encode*
-   
+
    Included in
          init.php
-   
+
    Description
          Output compression class by Sandy McArthur, Jr. Included if option is
          set in TYPO3\_CONF\_VARS.
-   
+
    Avail. in FE
          (YES)
 
@@ -217,9 +208,7 @@ System/PHP Variables
 
 A short notice on system variables:
 
-Don't use any system-global vars, except these:
-
-::
+Don't use any system-global vars, except these::
 
    HTTP_GET_VARS, HTTP_POST_VARS, HTTP_COOKIE_VARS
 

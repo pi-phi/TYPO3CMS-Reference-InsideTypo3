@@ -1,6 +1,6 @@
 ﻿.. |img-136|    image:: ../../../Images/manual_html_af9fc91.png
-   :height: 346
-   :width: 397
+.. :height: 346
+.. :width: 397
 .. :align: left
 .. :border: 0
 .. :name: Graphic39

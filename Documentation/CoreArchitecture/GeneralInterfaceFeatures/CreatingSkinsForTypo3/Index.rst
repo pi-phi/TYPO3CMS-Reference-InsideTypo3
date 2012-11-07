@@ -1,18 +1,10 @@
-﻿.. include:: Images.txt
-
 .. ==================================================
 .. FOR YOUR INFORMATION
 .. --------------------------------------------------
 .. -*- coding: utf-8 -*- with BOM.
 
-.. ==================================================
-.. DEFINE SOME TEXTROLES
-.. --------------------------------------------------
-.. role::   underline
-.. role::   typoscript(code)
-.. role::   ts(typoscript)
-   :class:  typoscript
-.. role::   php(code)
+.. include:: ../../../Includes.txt
+.. include:: Images.txt
 
 
 Creating skins for TYPO3
@@ -81,14 +73,12 @@ and product name in the copyright notice. This must not be changed.
 
 Notice, that the bottom message (#2) is not something we have made up
 ourselves but required by the GPL license according to this part of
-the license:
-
-::
+the license::
 
    ...
    If the program is interactive, make it output a short notice like this
    when it starts in an interactive mode:
-   
+
        Gnomovision version 69, Copyright (C) year name of author
        Gnomovision comes with ABSOLUTELY NO WARRANTY; for details type `show w'.
        This is free software, and you are welcome to redistribute it

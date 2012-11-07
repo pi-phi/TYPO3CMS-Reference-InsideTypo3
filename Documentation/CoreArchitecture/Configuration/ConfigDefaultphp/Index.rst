@@ -1,18 +1,9 @@
-﻿
-
 .. ==================================================
 .. FOR YOUR INFORMATION
 .. --------------------------------------------------
 .. -*- coding: utf-8 -*- with BOM.
 
-.. ==================================================
-.. DEFINE SOME TEXTROLES
-.. --------------------------------------------------
-.. role::   underline
-.. role::   typoscript(code)
-.. role::   ts(typoscript)
-   :class:  typoscript
-.. role::   php(code)
+.. include:: ../../../Includes.txt
 
 
 config\_default.php
@@ -25,9 +16,7 @@ source for information about each configuration option available! So
 please take a look into the source code of that file if you want to
 browse the full array of options you can apply!
 
-This is a snippet from that file:
-
-::
+This is a snippet from that file::
 
    <?php
    /**
@@ -42,9 +31,9 @@ This is a snippet from that file:
    * @author    Kasper Skårhøj <kasper@typo3.com>
    * Revised for TYPO3 3.6 2/2003 by Kasper Skårhøj
    */
-   
+
    if (!defined ('PATH_typo3conf'))     die ('The configuration path was not properly defined!');
-   
+
    $TYPO3_CONF_VARS = Array(
        'GFX' => array(        // Configuration of the image processing features in TYPO3. 'IM' and 'GD' are short for ImageMagick and  GD library respectively.
            'image_processing' => 1,                // Boolean. Enables image processing features. Disabling this means NO image processing with either GD or IM!
@@ -52,6 +41,6 @@ This is a snippet from that file:
            'thumbnails_png' => 0,                    // Bits. Bit0: If set, thumbnails from non-jpegs will be 'png', otherwise 'gif' (0=gif/1=png). Bit1: Even JPG's will be converted to png or gif (2=gif/3=png)
            'gif_compress' => 1,                    // Boolean. Enables the use of the t3lib_div::gif_compress() workaround function for compressing giffiles made with GD or IM, which probably use only RLE or no compression at all.
            ...[and it goes on!]...
-   
-   
+
+
 

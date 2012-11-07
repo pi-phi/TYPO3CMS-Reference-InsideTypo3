@@ -1,18 +1,9 @@
-﻿
-
 .. ==================================================
 .. FOR YOUR INFORMATION
 .. --------------------------------------------------
 .. -*- coding: utf-8 -*- with BOM.
 
-.. ==================================================
-.. DEFINE SOME TEXTROLES
-.. --------------------------------------------------
-.. role::   underline
-.. role::   typoscript(code)
-.. role::   ts(typoscript)
-   :class:  typoscript
-.. role::   php(code)
+.. include:: ../../../Includes.txt
 
 
 Versioning in TYPO3
@@ -149,9 +140,7 @@ version. The “Live” unique value will remain until changed in the live
 version.
 
 You can hide fields with the “unique” keyword when they are offline
-versions. This is done with the display condition:
-
-::
+versions. This is done with the display condition::
 
    'displayCond' => 'VERSION:IS:false',
 
@@ -177,13 +166,13 @@ This is an overview of how permissions are handled in relation to
 versioning:
 
 - **Display**
-  
+
   - Read permissions are evaluated based on the live version of pages (as
     the basic rule). The read permissions of the offline page version in a
     workspace is not observed. (Reason: When for example the page tree is
     generated TYPO3 selects all live records and then looks for versioned
     overlays).
-  
+
   - Read permissions for new page versions of “branch” type is observed in
     eg. Web > List module. This is due to the fact that the real ID of a
     “branch” type page is what the backend uses in the Web>List module
@@ -192,71 +181,71 @@ versioning:
     gets evaluated.
 
 - **Versioning records**
-  
+
   - To create a new version the user must have read permission to the live
     record he requests to version
-  
+
   - A new version of a page will inherit the owner user, group and
     permission settings from the live record
-  
+
   - To create a "Page" or "Branch" version of a page requires read
     permission to all subpages. All records that should be copied along
     with "Page" and "Branch" versions will be so regardless of the users
     table-modify permissions.
 
 - **Publishing version**
-  
+
   - To publish, a user must have general publishing permission in the
     workspace, for instance be the owner of it or have access to the Live
     workspace.
-  
+
   - In addition, the user must have read and edit access to the offline
     version being published plus edit access to the  *live version* that a
     publishing action will substitute!
-  
+
   - The permissions of a new version of a page follows the page when
     published.
 
 - **Editing records**
-  
+
   - For all editing it is required that the stage of the versioned record
     (or root point) allows editing.
-  
+
   - Page records:
-    
+
     - Permission to edit is always evaluated based on the pages own
       permission settings and not the live records.
-  
+
   - Records from non-pages tables:
-    
+
     - "Element" versions: Always based on the live parent page.
-    
+
     - Live records inside a "Branch" or "Page" versioning type immediately
       under the root point depends on permissions of the root point offline
       version.
 
 - **New records**
-  
+
   - When new records are created with a version and live place holder the
     permissions depend on the live page under which the record is created.
 
 - **Moving records**
-  
+
   - Records can be moved as long as the source and destination root points
     has a stage that allows it.
-  
+
   - New records created with a place holder element can be moved freely
     around except into other "Page" and "Branch" versions.
-  
+
   - Generally, the stage of a moved record has to allow for editing plus
     regular permissions for moving are observed.
 
 - **Deleting records**
-  
+
   - If the record is inside a "Page" or "Branch" type version of a page,
     then it can be readily deleted if other permissions allow, including
     stage of the root point.
-  
+
   - If a record is outside a versioned branch and supports versioning it
     will be marked for deletion if all usual requirements are fulfilled at
     the time of the delete request: Delete access to record, that no
@@ -265,7 +254,7 @@ versioning:
     for deletion any change to the record and subpages that would
     otherwise prevent deletion for the user will not be effective: The
     record  *will* be deleted upon publication!
-  
+
   - If you try to delete a Live record for which a version is found in the
     workspace, that version is deleted instead.
 

@@ -1,18 +1,9 @@
-﻿
-
 .. ==================================================
 .. FOR YOUR INFORMATION
 .. --------------------------------------------------
 .. -*- coding: utf-8 -*- with BOM.
 
-.. ==================================================
-.. DEFINE SOME TEXTROLES
-.. --------------------------------------------------
-.. role::   underline
-.. role::   typoscript(code)
-.. role::   ts(typoscript)
-   :class:  typoscript
-.. role::   php(code)
+.. include:: ../../../Includes.txt
 
 
 PHP settings
@@ -29,10 +20,8 @@ enabled:
 
 - Settings that will prevent PHP from revealing information about your
   system if an error occurs. However, this will be very disturbing to
-  turn on in a development environment:
-  
-  ::
-  
+  turn on in a development environment::
+
      log_errors = On
      display_errors = Off
 

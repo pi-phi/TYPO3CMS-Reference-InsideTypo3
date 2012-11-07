@@ -1,18 +1,10 @@
-﻿.. include:: Images.txt
-
 .. ==================================================
 .. FOR YOUR INFORMATION
 .. --------------------------------------------------
 .. -*- coding: utf-8 -*- with BOM.
 
-.. ==================================================
-.. DEFINE SOME TEXTROLES
-.. --------------------------------------------------
-.. role::   underline
-.. role::   typoscript(code)
-.. role::   ts(typoscript)
-   :class:  typoscript
-.. role::   php(code)
+.. include:: ../../../Includes.txt
+.. include:: Images.txt
 
 
 conf.php
@@ -31,10 +23,10 @@ scheme:
 
    Variable/Constant
          Variable/Constant
-   
+
    Description
          Description
-   
+
    Examples
          Examples
 
@@ -43,27 +35,27 @@ scheme:
 
    Variable/Constant
          TYPO3\_MOD\_PATH
-   
+
    Description
          PHP Constant.
-         
+
          Defines the path  *from* the main backend folder (where init.php is,
          PATH\_typo3)  *to* the base folder of the module (where the conf.php
          file is).
-         
+
          Used in init.php to determine the sitepath. Very, very important. If
          this is not correct, your module will not pass init.php without an
          error.
-   
+
    Examples
          ::
-         
+
               // Configures path for a core module:
-            define('TYPO3_MOD_PATH', 
+            define('TYPO3_MOD_PATH',
                     'mod/web/info/');
-            
+
               // Configures path for an extension module:
-            define('TYPO3_MOD_PATH', 
+            define('TYPO3_MOD_PATH',
                     '../typo3conf/ext/temp/mod2/');
 
 
@@ -71,20 +63,20 @@ scheme:
 
    Variable/Constant
          $BACK\_PATH
-   
+
    Description
          Global Variable.
-         
+
          Defines the path "back" to the main folder (PATH\_typo3) from the
          module folder. Used by file references primarily. This is the reverse
          of "TYPO3\_MOD\_PATH".
-   
+
    Examples
          ::
-         
+
               // Configures backpath for a core module:
             $BACK_PATH = '../../../';
-            
+
               // Configures backpath for extension module:
             $BACK_PATH = '../../../../typo3/';
 
@@ -93,19 +85,19 @@ scheme:
 
    Variable/Constant
          $MLANG
-   
+
    Description
          Global variable containing title, descriptions and icon reference for
          the backend menu.
-         
+
          *Applies only to Backend Modules.*
-   
+
    Examples
          ::
-         
-            $MLANG["default"]["tabs_images"]["tab"] = 
+
+            $MLANG["default"]["tabs_images"]["tab"] =
                     "moduleicon.gif";
-            $MLANG["default"]["ll_ref"] = 
+            $MLANG["default"]["ll_ref"] =
                     "LLL:EXT:temp/mod1/locallang_mod.php";
 
 
@@ -113,22 +105,22 @@ scheme:
 
    Variable/Constant
          $MCONF
-   
+
    Description
          Global variable containing settings like access criteria, navigation
          frame script, default submodule and the module name.
-         
+
          *Applies only to Backend Modules.*
-   
+
    Examples
          ::
-         
+
               // For the "Web" main module:
             $MCONF['defaultMod'] = 'list';
             $MCONF['navFrameScript'] = '../../alt_db_navframe.php';
             $MCONF['name'] = 'web';
             $MCONF['access'] = 'user,group';
-            
+
               // More common for extension backend modules:
             $MCONF["access"] = "user,group";
             $MCONF["script"] = "index.php";
@@ -166,16 +158,14 @@ includes:
   the key $EM\_CONF[ *extension-key* ]["module"] - otherwise the EM will
   not know that there is a "conf.php" file to modify!
 
-An example would look like this:
-
-::
+An example would look like this::
 
    <?php
        // DO NOT REMOVE OR CHANGE THESE 3 LINES:
    define('TYPO3_MOD_PATH', '../typo3conf/ext/temp/mod2/');
    $BACK_PATH='../../../../typo3/';
    $MCONF["name"]="web_txtempM2";
-       
+
    $MCONF["access"]="user,group";
    $MCONF["script"]="index.php";
    $MLANG["default"]["tabs_images"]["tab"] = "moduleicon.gif";
@@ -192,7 +182,7 @@ $MLANG
 
    $MLANG keys
          $MLANG keys
-   
+
    Description
          Description
 
@@ -201,9 +191,9 @@ $MLANG
 
    $MLANG keys
          ::
-         
+
             $MLANG['default']['tabs_images']['tab']
-   
+
    Description
          Icon reference
 
@@ -212,9 +202,9 @@ $MLANG
 
    $MLANG keys
          ::
-         
+
             $MLANG['default']['ll_ref']
-   
+
    Description
          "locallang" file reference where the keys "mlang\_tabs\_tab",
          "mlang\_labels\_tablabel" and "mlang\_labels\_tabdescr" defines titles
@@ -225,11 +215,11 @@ $MLANG
 
    $MLANG keys
          ::
-         
+
             $MLANG[ language-key ]['labels']['tablabel']
             $MLANG[ language-key ]['labels']['tabdescr']
             $MLANG[ language-key ]['tabs']['tab']
-   
+
    Description
          Obsolete
 
@@ -239,34 +229,30 @@ $MLANG
 The $MLANG variable contains the icon reference and title /
 description for a Backend Module. Originally the $MLANG variable
 defined values for all languages inside the conf.php file. This
-(obsolete) codelisting shows it:
-
-::
+(obsolete) codelisting shows it::
 
    $MLANG["default"]["labels"]["tablabel"] = "Advanced functions";
    $MLANG["default"]["tabs"]["tab"] = "Func";
    $MLANG["default"]["tabs_images"]["tab"] = "func.gif";
-   
+
    $MLANG["dk"]["labels"]["tablabel"] = "Avancerede funktioner";
    $MLANG["dk"]["tabs"]["tab"] = "Funk.";
-   
+
    $MLANG["de"]["labels"]["tablabel"] = "Erweiterte Funktionen";
    $MLANG["de"]["tabs"]["tab"] = "Funk.";
-   
+
    $MLANG["no"]["labels"]["tablabel"] = "Avanserte funksjoner";
    $MLANG["no"]["tabs"]["tab"] = "Funk.";
-   
+
    $MLANG["it"]["labels"]["tablabel"] = "Funzioni avanzate";
    $MLANG["it"]["tabs"]["tab"] = "Funzione";
    ...
-   
+
    (OBSOLETE!)
 
 This is still supported for backwards compatibility reasons. Today you
 need to configure only two lines, one for a "locallang" file reference
-and one for the icon image:
-
-::
+and one for the icon image::
 
    $MLANG['default']['tabs_images']['tab'] = 'func.gif';
    $MLANG['default']['ll_ref']='LLL:EXT:lang/locallang_mod_web_func.php';
@@ -275,9 +261,7 @@ The icon reference (line 1) points to an icon image relative to the
 current directory (normally located there).
 
 The "locallang" file reference in line 2 points to a "locallang"-file
-which in this case looks like this:
-
-::
+which in this case looks like this::
 
    <?php
    # TYPO3 CVS ID: $Id: locallang_mod_web_func.php,v 1.5 2004/04/30 16:19:54 typo3 Exp $
@@ -321,7 +305,7 @@ $MCONF
 
    $MCONF keys
          $MCONF keys
-   
+
    Description
          Description
 
@@ -330,36 +314,32 @@ $MCONF
 
    $MCONF keys
          ::
-         
+
             $MCONF['name']
-   
+
    Description
          Module name.
-         
+
          - For main modules this is [ *module-key* ]
-         
+
          - For sub modules this is [ *module-key* ]\_[ *sub-module-key* ]
-         
+
          - For Stand-Alone scripts, prefixed "xMOD\_" and then probably the file-
            name or another unique identification.
-         
-         **Examples (Backend Modules):**
-         
-         ::
-         
+
+         **Examples (Backend Modules):** ::
+
               // Main module (from extension)
             $MCONF["name"]="txtempM1";
-            
+
               // Submodule of "Web" main module:
             $MCONF["name"]="web_txtempM2";
-            
+
               // File>Filelist module:
             $MCONF['name']='file_list';
-         
-         **Example (Stand-alone scripts):**
-         
-         ::
-         
+
+         **Example (Stand-alone scripts):** ::
+
               // Setting pseudo module name
             $this->MCONF['name']='xMOD_alt_clickmenu.php';
               // Setting pseudo module name for CSM item
@@ -370,13 +350,13 @@ $MCONF
 
    $MCONF keys
          ::
-         
+
             $MCONF['script']
-   
+
    Description
          Defines the PHP script which the module is run by. The backend will
          link to this script when the module is activated.
-         
+
          Special keyword is “\_DISPATCH” which will indicate that the
          “typo3/mod.php” script is used to access the module.
 
@@ -385,32 +365,32 @@ $MCONF
 
    $MCONF keys
          ::
-         
+
             $MCONF['access']
-   
+
    Description
          Defines access criteria by list of keywords. If "admin", only admin-
          users have access. If "user", "group" or "user,group" then the module
          is by default inaccessible.
-         
+
          - "admin" : For "admin" users only.
-         
+
          - "user" : Configurable for backend users.
-         
+
          - "group" : Configurable for backend groups.
-         
+
          - [blank]: Everyone has access.
-         
+
          **Example:**
-         
+
          "user,group" - No one (except "admin") has access  *except* the module
          is specifically added in their user / group profile.
-         
+
          This is how the Module selector looks for both backend users and
          groups:
-         
+
          |img-86|
-         
+
          (For Backend Usergroups you have to enable "Include Access Lists" in
          order to access the module selector).
 
@@ -419,18 +399,18 @@ $MCONF
 
    $MCONF keys
          ::
-         
+
             $MCONF['workspaces']
-   
+
    Description
          Defines which workspaces the module is allowed to work under. Empty
          string means all workspaces. Otherwise this list of keywords can be
          combined to set access:
-         
+
          - “online” : Available in Live (online) mode
-         
+
          - “offline” : Available in Draft (offline) mode
-         
+
          - “custom” : Available for custom modes
 
 
@@ -438,9 +418,9 @@ $MCONF
 
    $MCONF keys
          ::
-         
+
             $MCONF['defaultMod']
-   
+
    Description
          Sub-module key of sub-module to be default for main module. (Only for
          Main modules)
@@ -450,17 +430,15 @@ $MCONF
 
    $MCONF keys
          ::
-         
+
             $MCONF['navFrameScript']
-   
+
    Description
          If set, the module will become a "Frameset" module and this will point
          to the script running in the navigation frame. (Only for Main modules)
-         
-         **Example (From "Web" main module):**
-         
-         ::
-         
+
+         **Example (From "Web" main module):** ::
+
             $MCONF['navFrameScript']='../../alt_db_navframe.php';
 
 
@@ -468,13 +446,13 @@ $MCONF
 
    $MCONF keys
          ::
-         
+
             $MCONF['navFrameScriptParam']
-   
+
    Description
          GET parameters to pass to the navigation frame script (only Sub-
          modules of a frameset module).
-         
+
          Parameters set for the main module will be inherited to submodules if
          not overridden.
 
@@ -483,9 +461,9 @@ $MCONF
 
    $MCONF keys
          ::
-         
+
             $MCONF['shy']
-   
+
    Description
          If TRUE then the module will not be visible in the backend menu or
          anywhere modules are displayed based on the processing of
@@ -506,9 +484,7 @@ initialization.
 The most basic configuration for a backend script is setting the
 TYPO3\_MOD\_PATH constant and the $BACK\_PATH variable before
 including "init.php". The script "typo3/install/index.php" is an
-example of this:
-
-::
+example of this::
 
    define('TYPO3_MOD_PATH', 'install/');
    $BACK_PATH='../';
@@ -519,18 +495,14 @@ It is more common to define the TYPO3\_MOD\_PATH constant and
 $BACK\_PATH variable in a separate conf-file - that is always done for
 modules and when you are supplying backend scripts from extensions. In
 such a case the initialization of the backend script will look like
-this:
-
-::
+this::
 
    unset($MCONF);
    require('conf.php');
    require($BACK_PATH.'init.php');
    ...
 
-The file "conf.php" looks like this:
-
-::
+The file "conf.php" looks like this::
 
    <?php
        // DO NOT REMOVE OR CHANGE THESE 3 LINES:
@@ -558,16 +530,14 @@ Example: conf.php for Backend Modules
 
 The conf.php file for a backend module compared to a stand-alone
 script is different mainly by defining values for $MCONF and $MLANG.
-This is an example:
-
-::
+This is an example::
 
    <?php
        // DO NOT REMOVE OR CHANGE THESE 3 LINES:
    define('TYPO3_MOD_PATH', '../typo3conf/ext/temp/mod2/');
    $BACK_PATH = '../../../../typo3/';
    $MCONF['name'] = 'web_txtempM2';
-       
+
    $MCONF['access'] = 'user,group';
    $MCONF['script'] = 'index.php';
    $MLANG['default']['tabs_images']['tab'] = 'moduleicon.gif';

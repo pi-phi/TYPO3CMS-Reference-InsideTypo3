@@ -1,18 +1,9 @@
-﻿
-
 .. ==================================================
 .. FOR YOUR INFORMATION
 .. --------------------------------------------------
 .. -*- coding: utf-8 -*- with BOM.
 
-.. ==================================================
-.. DEFINE SOME TEXTROLES
-.. --------------------------------------------------
-.. role::   underline
-.. role::   typoscript(code)
-.. role::   ts(typoscript)
-   :class:  typoscript
-.. role::   php(code)
+.. include:: ../../../Includes.txt
 
 
 How translations are handled by the system
@@ -35,7 +26,7 @@ of the backend interface:
   according to the scheme “locallang\*.xml”. The default labels  *must
   be english!* The system extension “lang” contains labels for the core
   system.
-  
+
   - *Notice:* "locallang\*.php" files is an old alternative still
     supported but deprecated; They contain the $LOCAL\_LANG array in a PHP
     script which is simply included. Old “locallang.php” files can be

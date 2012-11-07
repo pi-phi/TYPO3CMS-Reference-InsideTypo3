@@ -1,18 +1,10 @@
-﻿.. include:: Images.txt
-
 .. ==================================================
 .. FOR YOUR INFORMATION
 .. --------------------------------------------------
 .. -*- coding: utf-8 -*- with BOM.
 
-.. ==================================================
-.. DEFINE SOME TEXTROLES
-.. --------------------------------------------------
-.. role::   underline
-.. role::   typoscript(code)
-.. role::   ts(typoscript)
-   :class:  typoscript
-.. role::   php(code)
+.. include:: ../../../Includes.txt
+.. include:: Images.txt
 
 
 Initialize TYPO3 backend in a PHP shell script (CLI mode)
@@ -51,34 +43,32 @@ Basic framework
 """""""""""""""
 
 To set up a PHP shell script that initializes the TYPO3 you create a
-file with the framework here:
-
-::
+file with the framework here::
 
       1: #! /usr/bin/php -q
       2: <?php
-      3: 
+      3:
       4: // *****************************************
       5: // Standard initialization of a CLI module:
       6: // *****************************************
-      7: 
+      7:
       8:     // Defining circumstances for CLI mode:
       9: define('TYPO3_cliMode', TRUE);
-     10: 
+     10:
      11:     // Defining PATH_thisScript here: Must be the ABSOLUTE path of this script in the right context:
      12:     // This will work as long as the script is called by it's absolute path!
      13: define("PATH_thisScript", $_ENV['_'] ? $_ENV['_'] : $_SERVER['_']);
-     14: 
+     14:
      15:     // Include configuration file:
      16: require(dirname(PATH_thisScript).'/conf.php');
-     17: 
+     17:
      18:     // Include init file:
      19: require(dirname(PATH_thisScript).'/'.$BACK_PATH.'init.php');
-     20: 
-     21: 
-     22: 
+     20:
+     21:
+     22:
      23: # HERE you run your application!
-     24: 
+     24:
      25: ?>
 
 - Line 1 will call the PHP binary to parse the script (just like a bash-
@@ -124,9 +114,7 @@ extension key. The value of $MCONF['name'] in lowercase will be the
 backend username that is initialized automatically in init.php for
 your sessions. This is hardcoded.
 
-An example conf.php file looks like this:
-
-::
+An example conf.php file looks like this::
 
       0:     // DO NOT REMOVE OR CHANGE THESE 3 LINES:
       1: define('TYPO3_MOD_PATH', '../typo3conf/ext/user_fi_io/cronmod/');
@@ -149,18 +137,16 @@ Running the script
 """"""""""""""""""
 
 Any script configured like this can be run with the “status” argument
-and you will see whether the initialization went well:
-
-::
+and you will see whether the initialization went well::
 
    agentk@rock:~$
    agentk@rock:~$ /var/www/typo3/dev/3dsplm_live/typo3conf/ext/user_fi_io/cronmod/index.phpsh status
    Status of TYPO3 CLI script:
-   
+
    Username [uid]: _cli_userfiio [17]
    Database: t3_3dsplm_live
    PATH_site: /var/www/typo3/dev/3dsplm_live/
-   
+
    agentk@rock:~$
 
 

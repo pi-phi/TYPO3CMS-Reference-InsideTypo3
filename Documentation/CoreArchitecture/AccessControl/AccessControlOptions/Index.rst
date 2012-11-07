@@ -1,18 +1,10 @@
-﻿.. include:: Images.txt
-
 .. ==================================================
 .. FOR YOUR INFORMATION
 .. --------------------------------------------------
 .. -*- coding: utf-8 -*- with BOM.
 
-.. ==================================================
-.. DEFINE SOME TEXTROLES
-.. --------------------------------------------------
-.. role::   underline
-.. role::   typoscript(code)
-.. role::   ts(typoscript)
-   :class:  typoscript
-.. role::   php(code)
+.. include:: ../../../Includes.txt
+.. include:: Images.txt
 
 
 Access Control options
@@ -74,18 +66,18 @@ Access lists are defined in the user groups and includes
    tables from the $TCA array.
 
 #. **Positivelist of pageTypes (pages.doktype) that can be selected.**
-   
+
    Choice of pageTypes (doktype) for a page is associated with:
-   
+
    #. An special icon for the page.
-   
+
    #. Permitted tables on the page (see `$PAGES\_TYPES global variable
       <#$PAGES_TYPES%7Coutline>`_ ).
-   
+
    #. If the pageType is
-      
+
       #. Web-page type (doktype<200, can be seen in 'cms' frontend)
-      
+
       #. SysFolder type (doktype >=200, can  *not* be seen in 'cms' frontend)
 
 #. **Positivelist of "excludefields" that are not excluded.**
@@ -262,9 +254,7 @@ doc/manual.sxw#User%20TSconfig%7Coutline>`_ .
 
 A good example is to look at the script 'alt\_main.php' in which the
 shortcut frame is displayed in the frameset only if the User TSconfig
-option "options.shortcutFrame" is true:
-
-::
+option "options.shortcutFrame" is true::
 
    if ($BE_USER->getTSConfigVal('options.shortcutFrame'))    {....
 
@@ -292,9 +282,7 @@ set.
 Further notice that the TYPO3\_CONF\_VARS[BE][defaultUserTSconfig]
 value can be configured with default TSconfig for all be\_users.
 
-"Admin" users further has a minor set of default TSconfig as well:
-
-::
+"Admin" users further has a minor set of default TSconfig as well::
 
    admPanel.enable.all = 1
    setup.default.deleteCmdInClipboard = 1

@@ -1,18 +1,9 @@
-﻿
-
 .. ==================================================
 .. FOR YOUR INFORMATION
 .. --------------------------------------------------
 .. -*- coding: utf-8 -*- with BOM.
 
-.. ==================================================
-.. DEFINE SOME TEXTROLES
-.. --------------------------------------------------
-.. role::   underline
-.. role::   typoscript(code)
-.. role::   ts(typoscript)
-   :class:  typoscript
-.. role::   php(code)
+.. include:: ../../../Includes.txt
 
 
 Overriding LOCAL\_LANG values
@@ -44,10 +35,8 @@ session". What we do is this:
 
 - Create an alternative $LOCAL\_LANG array with the labelkeys you want
   to override.I have created the file "typo3conf/llor\_test.php" which
-  looks like this:
-  
-  ::
-  
+  looks like this::
+
      <?php
      $LOCAL_LANG = array(
              "default" => array(
@@ -58,18 +47,16 @@ session". What we do is this:
              )
      );
      ?>
-  
+
   Notice how it contains both an English and Danish alternative.
 
 - Configure the script to override values in the file
   "EXT:lang/locallang\_core.php"This is simply done by adding an entry
   in the $TYPO3\_CONF\_VARS['BE']['XLLfile'] array which points to the
-  overriding file:
-  
-  ::
-  
+  overriding file::
+
      $TYPO3_CONF_VARS['BE']['XLLfile']['EXT:lang/locallang_core.php']='typo3conf/llor_test.php';
-  
+
   The filepath of "typo3conf/llor\_test.php" is relative to the
   PATH\_site constant. You could also keep the file in an extension in
   which case you would have to enter the file reference like

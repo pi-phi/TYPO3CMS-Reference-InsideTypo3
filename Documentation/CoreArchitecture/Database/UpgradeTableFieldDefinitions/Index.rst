@@ -1,18 +1,10 @@
-﻿.. include:: Images.txt
-
 .. ==================================================
 .. FOR YOUR INFORMATION
 .. --------------------------------------------------
 .. -*- coding: utf-8 -*- with BOM.
 
-.. ==================================================
-.. DEFINE SOME TEXTROLES
-.. --------------------------------------------------
-.. role::   underline
-.. role::   typoscript(code)
-.. role::   ts(typoscript)
-   :class:  typoscript
-.. role::   php(code)
+.. include:: ../../../Includes.txt
+.. include:: Images.txt
 
 
 Upgrade table/field definitions
@@ -72,9 +64,7 @@ existing table "tt\_content".
 
 When the Install Tool reads the "ext\_tables.sql" files it will
 automatically read these four lines and add them to the previously
-defined requirements for the "tt\_content" table.
-
-::
+defined requirements for the "tt\_content" table. ::
 
    #
    # Table structure for table 'tx_templavoila_datastructure'
@@ -90,11 +80,11 @@ defined requirements for the "tt\_content" table.
            dataprot mediumtext NOT NULL,
            scope tinyint(4) unsigned DEFAULT '0' NOT NULL,
            previewicon tinytext NOT NULL,
-           
+
            PRIMARY KEY (uid),
            KEY parent (pid)
    );
-   
+
    #
    # Table structure for table 'tt_content'
    #

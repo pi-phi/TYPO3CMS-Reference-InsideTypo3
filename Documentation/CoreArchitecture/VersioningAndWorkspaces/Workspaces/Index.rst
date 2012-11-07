@@ -1,18 +1,9 @@
-﻿
-
 .. ==================================================
 .. FOR YOUR INFORMATION
 .. --------------------------------------------------
 .. -*- coding: utf-8 -*- with BOM.
 
-.. ==================================================
-.. DEFINE SOME TEXTROLES
-.. --------------------------------------------------
-.. role::   underline
-.. role::   typoscript(code)
-.. role::   ts(typoscript)
-   :class:  typoscript
-.. role::   php(code)
+.. include:: ../../../Includes.txt
 
 
 Workspaces
@@ -60,37 +51,37 @@ three types of workspaces:
 
 - Draft workspace: When a user selects the draft workspace new rules
   apply to anything he does in the backend:
-  
+
   - Draft: Any change he tries to make will not affect the live website.
     It's a safe playground.
-  
+
   - Transparent versioning: He can edit pages and elements because a new
     version is made automatically and attached to the workspace. No
     training needed, no administrative overhead!
-  
+
   - Previewing: Visiting the frontend website will display it as it will
     appear when all versions in the workspace is eventually published
     (switch enable/disable this feature).
-  
+
   - Overview of changes: The workspace manager module gives a clear
     overview of all changes that has been made inside the workspace across
     the site. This gives unparalleled control before publishing the
     content live.
-  
+
   - Constraints: Only tables that support versioning can be edited. All
     management of files in fileadmin/ is disabled because they may affect
     the live website and thus would break the principle of “safe
     playground”.
 
 - Custom workspaces:
-  
+
   - Inherits all properties of the default “Draft workspace” but can be
     configured additionally with owners, members and reviewers plus
     database- and file mounts plus other settings. A custom workspace is a
     great way to do team-based maintenance of (a section of) the website
     including a basic implementation of workflow states with editor-
     reviewer-publisher.
-  
+
   - Some of the constraints of the default draft workspace can be eased up
     a bit by configuration; For instance records that does not support
     versioning can be allowed to be edited and file mounts can be defined
@@ -146,13 +137,13 @@ their differences and applications:
 
    Topic
          Topic
-   
+
    Live workspace
          Live workspace
-   
+
    Draft workspace (default)
          Draft workspace (default)
-   
+
    Custom workspaces
          Custom workspaces
 
@@ -161,28 +152,28 @@ their differences and applications:
 
    Topic
          **Access**
-   
+
    Live workspace
          Users and groups must be specifically allowed access to the Live
          workspace.
-         
+
          (Checkboxes in user/group record)
-         
+
          *(For upgrades from pre-4.0 versions this is done by default).*
-   
+
    Draft workspace (default)
          Users and groups must be specifically allowed access to the Draft
          workspace.
-         
+
          (Checkboxes in user/group record)
-   
+
    Custom workspaces
          Granted through the workspace configuration which includes:
-         
+
          \- A list of editors (users and/or groups)
-         
+
          \- A list of reviewers (users and/or groups)
-         
+
          \- Owner users (initial creator)
 
 
@@ -190,16 +181,16 @@ their differences and applications:
 
    Topic
          **Editing**
-   
+
    Live workspace
          Live content
-   
+
    Draft workspace (default)
          Draft versions of live content
-   
+
    Custom workspaces
          Draft versions of live content
-         
+
          *Option: To allow editing of tables without versioning available.*
 
 
@@ -207,20 +198,20 @@ their differences and applications:
 
    Topic
          **DB mounts**
-   
+
    Live workspace
          From user profile
-   
+
    Draft workspace (default)
          From user profile
-   
+
    Custom workspaces
          Specific DB mounts can be specified in which case they will overrule
          DB mounts from user profiles.
-         
+
          Specific DB mounts are required to be within the DB mounts from the
          user profile (for security reasons)
-         
+
          If no DB mounts specified for workspace, user profile mounts are used
          (default)
 
@@ -229,18 +220,18 @@ their differences and applications:
 
    Topic
          **File mounts**
-   
+
    Live workspace
          From user profile
-   
+
    Draft workspace (default)
          None available. All file manipulation access is banned! (Otherwise
          violation of “draft principle”)
-   
+
    Custom workspaces
          By default, none is available due to same principle as for Draft
          workspace.
-         
+
          Optionally, file mounts can be specified for convenience reasons.
 
 
@@ -248,13 +239,13 @@ their differences and applications:
 
    Topic
          **Scheduled publishing**
-   
+
    Live workspace
          N/A
-   
+
    Draft workspace (default)
          N/A
-   
+
    Custom workspaces
          If CLI-script is configured in cronjob you can specify publishing
          date/time down to the minute. You can also specify an unpublish time
@@ -265,33 +256,33 @@ their differences and applications:
 
    Topic
          **Reviewing**
-   
+
    Live workspace
          Only through a separate workflow system.
-   
+
    Draft workspace (default)
          Content can be raised from “Editing” stage through “Review” to
          “Publish”.
-         
+
          However, the state does not impose any limitations on editing and
          publication of workspace contents.
-   
+
    Custom workspaces
          **Members** can raise content from “Editing” stage to “Review”.
          Members can only edit content when its in “Editing stage” (or
          “Rejected”)
-         
+
          **Reviewers** can raise the content from “Editing” stage to “Review”
          stage to “Publish” - or they can reject content back to editing.
          Reviewers can only edit content in these modes.
-         
+
          **Owners** can operate all states of course. Owners are the only ones
          to edit content when in “Publish” mode. Thus “Publish” mode provides
          protection for content awaiting publication.
-         
+
          The “Rejected” flag is reset automatically when editing occurs on a
          rejected element.
-         
+
          Options available for automatic email notification between the roles.
 
 
@@ -299,23 +290,23 @@ their differences and applications:
 
    Topic
          **Publishing**
-         
+
          (For all: Requires edit access to live element)
-   
+
    Live workspace
          No limitations. Content can be edited live and even content from other
          workspaces can be published through the versioning API regardless of
          stage.
-   
+
    Draft workspace (default)
          All users with access to Live workspace is able to publish.
-   
+
    Custom workspaces
          Workspace owners can publish (even without access to Live workspace).
-         
+
          Reviewers/Members cannot publish  *unless* they have access to online
          workspace as well (this default behaviour can be disabled).
-         
+
          Option: Restrict publishing to elements in "Publish" stage only.
 
 
@@ -323,16 +314,16 @@ their differences and applications:
 
    Topic
          **Settings**
-   
+
    Live workspace
          N/A
-   
+
    Draft workspace (default)
          N/A
-   
+
    Custom workspaces
          Users with permission to create a custom workspace can do so.
-         
+
          Workspace owners can add other owners, reviewers and editors and
          change all workspace properties.
 
@@ -341,13 +332,13 @@ their differences and applications:
 
    Topic
          **Auto versioning**
-   
+
    Live workspace
          N/A
-   
+
    Draft workspace (default)
          Yes
-   
+
    Custom workspaces
          Yes, but can be disabled so a conscious versioning actions is
          required.
@@ -357,13 +348,13 @@ their differences and applications:
 
    Topic
          **Swapping**
-   
+
    Live workspace
          N/A
-   
+
    Draft workspace (default)
          Yes
-   
+
    Custom workspaces
          Yes, but can be disabled.
 
@@ -372,13 +363,13 @@ their differences and applications:
 
    Topic
          **Versioning types**
-   
+
    Live workspace
          All
-   
+
    Draft workspace (default)
          All
-   
+
    Custom workspaces
          All, but you can disable any of the types “Element”, “Page” and
          “Branch”.
@@ -388,13 +379,13 @@ their differences and applications:
 
    Topic
          **Other notes**
-   
+
    Live workspace
-   
-   
+
+
    Draft workspace (default)
-   
-   
+
+
    Custom workspaces
          Custom workspaces has a freeze flag that will shut down any
          update/edit/copy/move/delete etc. command in the workspace until it is
@@ -405,7 +396,7 @@ their differences and applications:
 
    Topic
          **Module access**
-   
+
    Live workspace
          All backend modules can specify $MCONF['workspaces'] =
          “[online,offline,custom]” to limit access based current workspace of
@@ -416,13 +407,13 @@ their differences and applications:
 
    Topic
          **Usage**
-   
+
    Live workspace
          Administrative purposes. First creation of site.
-   
+
    Draft workspace (default)
          Everyday maintenance for trusted editors.
-   
+
    Custom workspaces
          Specific projects on a site branch. Simple review-cycles. Informal
          team-work on site maintenance.

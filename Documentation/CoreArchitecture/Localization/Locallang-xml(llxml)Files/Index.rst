@@ -1,18 +1,9 @@
-﻿
-
 .. ==================================================
 .. FOR YOUR INFORMATION
 .. --------------------------------------------------
 .. -*- coding: utf-8 -*- with BOM.
 
-.. ==================================================
-.. DEFINE SOME TEXTROLES
-.. --------------------------------------------------
-.. role::   underline
-.. role::   typoscript(code)
-.. role::   ts(typoscript)
-   :class:  typoscript
-.. role::   php(code)
+.. include:: ../../../Includes.txt
 
 
 "locallang-XML" (llXML) files
@@ -40,9 +31,7 @@ for locallang-XML should be distribution considerations:
   for translators.
 
 The format of locallang-XML files can look like this example (shows
-inline translation of danish):
-
-::
+inline translation of danish)::
 
    <T3locallang>
        <meta type="array">

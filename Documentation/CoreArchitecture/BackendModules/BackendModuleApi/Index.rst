@@ -1,18 +1,10 @@
-﻿.. include:: Images.txt
-
 .. ==================================================
 .. FOR YOUR INFORMATION
 .. --------------------------------------------------
 .. -*- coding: utf-8 -*- with BOM.
 
-.. ==================================================
-.. DEFINE SOME TEXTROLES
-.. --------------------------------------------------
-.. role::   underline
-.. role::   typoscript(code)
-.. role::   ts(typoscript)
-   :class:  typoscript
-.. role::   php(code)
+.. include:: ../../../Includes.txt
+.. include:: Images.txt
 
 
 Backend Module API
@@ -27,9 +19,7 @@ $TBE\_MODULES (see t3lib/stddb/tables.php). $TBE\_MODULES contains the
 structure of the backend modules as they are arranged in main- and
 sub-modules. Every entry in this array represents a menu item on
 either first level (array key) or second level (value from list) in
-the left menu in the TYPO3 backend.
-
-::
+the left menu in the TYPO3 backend. ::
 
    $TBE_MODULES = Array (
        'web' => 'list,info,perm,func',
@@ -40,9 +30,7 @@ the left menu in the TYPO3 backend.
        'help' => 'about,cshmanual'
    );
 
-The syntax is:
-
-::
+The syntax is::
 
    $TBE_MODULES[ module ] => "submodule_1,submodule_2,submodule_3,submodule_4"
 
@@ -105,9 +93,7 @@ The module name, script, access criteria, type etc.
 
 When the backend needs to get a list of available modules for a
 backend user the class "t3lib\_loadmodules" is used. This code snippet
-does the trick:
-
-::
+does the trick::
 
        // Backend Modules:
    $loadModules = t3lib_div::makeInstance('t3lib_loadModules');
@@ -128,9 +114,7 @@ Adding new modules should be done by extensions. The API is easy; in
 the "ext\_tables.php" file of the extension you simply need to add
 code like this:
 
-**For main modules:**
-
-::
+**For main modules:** ::
 
    if (TYPO3_MODE=='BE')    {
        t3lib_extMgm::addModule('txtempM1','','',t3lib_extMgm::extPath($_EXTKEY).'mod1/');
@@ -141,9 +125,7 @@ appear like this in the menu:
 
 |img-83|
 
-**For sub modules:**
-
-::
+**For sub modules:** ::
 
    if (TYPO3_MODE=='BE')    {
        t3lib_extMgm::addModule('web','txtempM2','',t3lib_extMgm::extPath($_EXTKEY).'mod2/');

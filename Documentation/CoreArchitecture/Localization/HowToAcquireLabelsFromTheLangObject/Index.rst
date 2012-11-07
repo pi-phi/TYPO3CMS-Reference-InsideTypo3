@@ -1,18 +1,9 @@
-﻿
-
 .. ==================================================
 .. FOR YOUR INFORMATION
 .. --------------------------------------------------
 .. -*- coding: utf-8 -*- with BOM.
 
-.. ==================================================
-.. DEFINE SOME TEXTROLES
-.. --------------------------------------------------
-.. role::   underline
-.. role::   typoscript(code)
-.. role::   ts(typoscript)
-   :class:  typoscript
-.. role::   php(code)
+.. include:: ../../../Includes.txt
 
 
 How to acquire labels from the $LANG object
@@ -99,9 +90,7 @@ this:
   look for both file extensions and use the one it finds.
 
 Example from the "setup" module (red line includes locallang for that
-module):
-
-::
+module)::
 
    require ($BACK_PATH.'init.php');
    require ($BACK_PATH.'template.php');

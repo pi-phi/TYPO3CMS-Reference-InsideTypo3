@@ -1,27 +1,17 @@
-﻿.. include:: Images.txt
-
 .. ==================================================
 .. FOR YOUR INFORMATION
 .. --------------------------------------------------
 .. -*- coding: utf-8 -*- with BOM.
 
-.. ==================================================
-.. DEFINE SOME TEXTROLES
-.. --------------------------------------------------
-.. role::   underline
-.. role::   typoscript(code)
-.. role::   ts(typoscript)
-   :class:  typoscript
-.. role::   php(code)
+.. include:: ../../../Includes.txt
+.. include:: Images.txt
 
 
 The Install Tool
 ^^^^^^^^^^^^^^^^
 
 So we go to "coreinstall/typo3/install/index.php" but see this
-message:
-
-::
+message::
 
    In the main source distribution of Typo3, the install script is disabled by a die() function call.
    Open the file typo3/install/index.php and remove/out-comment the line that outputs this message!
@@ -84,9 +74,7 @@ directories which issues a warning, but that is because those are
 typically used with the "cms" extension frontend. That is disabled
 now. Remember? - Core only!
 
-So
-
-::
+So ::
 
    # mkdir typo3temp/
    # mkdir uploads/

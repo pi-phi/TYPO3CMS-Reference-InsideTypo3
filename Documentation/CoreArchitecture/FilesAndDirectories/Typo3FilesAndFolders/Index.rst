@@ -1,18 +1,9 @@
-﻿
-
 .. ==================================================
 .. FOR YOUR INFORMATION
 .. --------------------------------------------------
 .. -*- coding: utf-8 -*- with BOM.
 
-.. ==================================================
-.. DEFINE SOME TEXTROLES
-.. --------------------------------------------------
-.. role::   underline
-.. role::   typoscript(code)
-.. role::   ts(typoscript)
-   :class:  typoscript
-.. role::   php(code)
+.. include:: ../../../Includes.txt
 
 
 TYPO3 files and folders
@@ -31,7 +22,7 @@ source code you will see these directories:
 
    folder
          folder
-   
+
    b
 
 
@@ -39,7 +30,7 @@ source code you will see these directories:
 
    folder
          t3lib/
-   
+
    b
          TYPO3 libraries which are mostly for the backend, but some are used by
          the frontend as well. Includes a folder with fonts and graphics.
@@ -49,7 +40,7 @@ source code you will see these directories:
 
    folder
          typo3/
-   
+
    b
          TYPO3 backend administration directory. This has been described in
          detail earlier in this document.
@@ -59,7 +50,7 @@ source code you will see these directories:
 
    folder
          misc/
-   
+
    b
          Supplementary scripts (like superadmin.php) and old changelogs for
          previous versions. Not needed by any online site and can safely be

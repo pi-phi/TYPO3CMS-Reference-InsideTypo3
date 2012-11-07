@@ -1,18 +1,9 @@
-﻿
-
 .. ==================================================
 .. FOR YOUR INFORMATION
 .. --------------------------------------------------
 .. -*- coding: utf-8 -*- with BOM.
 
-.. ==================================================
-.. DEFINE SOME TEXTROLES
-.. --------------------------------------------------
-.. role::   underline
-.. role::   typoscript(code)
-.. role::   ts(typoscript)
-   :class:  typoscript
-.. role::   php(code)
+.. include:: ../../../Includes.txt
 
 
 "language-splitted" syntax (deprecated)
@@ -44,24 +35,20 @@ Example:
 ~~~~~~~~
 
 For the extension “mininews” we have a field called “title”. Normally
-this would be translated into Danish like this in the $TCA:
+this would be translated into Danish like this in the $TCA::
 
-::
-
-      "title" => Array (         
-                   "exclude" => 0,            
+      "title" => Array (
+                   "exclude" => 0,
                    "label" => "Title:|Titel:",
                    "config" => Array (
-                           "type" => "input",       
-                           "size" => "30",  
+                           "type" => "input",
+                           "size" => "30",
                            "eval" => "required",
                    )
            ),
 
 But now we would create a file, “locallang\_db.php” in the root of the
-extension directory. This would look like this:
-
-::
+extension directory. This would look like this::
 
    <?php
    $LOCAL_LANG = Array (
@@ -80,16 +67,14 @@ As you can see there is an English (red) and Danish (green)
 translation. But the German is still missing.
 
 Now, in the $TCA array we change the “language-splitted” label to this
-value instead:
+value instead::
 
-::
-
-      "title" => Array (         
-                   "exclude" => 0,            
+      "title" => Array (
+                   "exclude" => 0,
                    "label" => "LLL:EXT:mininews/locallang_db.php:tx_mininews_news.title",
                    "config" => Array (
-                           "type" => "input",       
-                           "size" => "30",  
+                           "type" => "input",
+                           "size" => "30",
                            "eval" => "required",
                    )
            ),

@@ -1,18 +1,9 @@
-﻿
-
 .. ==================================================
 .. FOR YOUR INFORMATION
 .. --------------------------------------------------
 .. -*- coding: utf-8 -*- with BOM.
 
-.. ==================================================
-.. DEFINE SOME TEXTROLES
-.. --------------------------------------------------
-.. role::   underline
-.. role::   typoscript(code)
-.. role::   ts(typoscript)
-   :class:  typoscript
-.. role::   php(code)
+.. include:: ../../../Includes.txt
 
 
 Relational Database Structure
@@ -44,21 +35,21 @@ requirements.
   render these in the backend, relations to other tables etc.
 
 - You must add at least these fields:
-  
+
   - “uid” - an auto-incremented integer, PRIMARY key, for the table,
     containing the  *unique* ID of the record in the table.
-  
+
   - “pid” - an integer pointing to the “uid” of the page (record from
     “pages” table) to which the record belongs.
-  
+
   - *any other fields you like .... typically at least:*
-    
+
     - A title field holding the records title as seen in the backend
-    
+
     - A tstamp field holding the last modification time of the record
-    
+
     - A sorting order field if records are sorted manually
-    
+
     - A “deleted” field which tells TYPO3 that the record is deleted (if
       set)
 

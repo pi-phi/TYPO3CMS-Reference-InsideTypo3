@@ -1,55 +1,55 @@
 ﻿.. |img-147|    image:: ../../../Images/manual_html_2c2459e1.png
-   :height: 195
-   :width: 330
+.. :height: 195
+.. :width: 330
 .. :align: left
 .. :border: 0
 .. :name: Graphic91
 
 .. |img-148|    image:: ../../../Images/manual_html_md947d88.png
-   :height: 260
-   :width: 160
+.. :height: 260
+.. :width: 160
 .. :align: left
 .. :border: 0
 .. :name: Graphic93
 
 .. |img-149|    image:: ../../../Images/manual_html_m10a5dc65.png
-   :height: 444
-   :width: 373
+.. :height: 444
+.. :width: 373
 .. :align: left
 .. :border: 0
 .. :name: Graphic92
 
 .. |img-150|    image:: ../../../Images/manual_html_179acd4d.png
-   :height: 106
-   :width: 75
+.. :height: 106
+.. :width: 75
 .. :align: left
 .. :border: 0
 .. :name: Graphic96
 
 .. |img-151|    image:: ../../../Images/manual_html_m29e2444a.png
-   :height: 452
-   :width: 493
+.. :height: 452
+.. :width: 493
 .. :align: left
 .. :border: 0
 .. :name: Graphic94
 
 .. |img-152|    image:: ../../../Images/manual_html_m3a2a1d71.png
-   :height: 596
-   :width: 445
+.. :height: 596
+.. :width: 445
 .. :align: left
 .. :border: 0
 .. :name: Graphic95
 
 .. |img-153|    image:: ../../../Images/manual_html_mdaf56d4.png
-   :height: 136
-   :width: 292
+.. :height: 136
+.. :width: 292
 .. :align: left
 .. :border: 0
 .. :name: Graphic97
 
 .. |img-154|    image:: ../../../Images/manual_html_m2974ef2f.png
-   :height: 76
-   :width: 283
+.. :height: 76
+.. :width: 283
 .. :align: left
 .. :border: 0
 .. :name: Graphic98

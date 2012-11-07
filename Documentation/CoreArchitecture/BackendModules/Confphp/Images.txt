@@ -1,6 +1,6 @@
 ﻿.. |img-86|     image:: ../../../Images/manual_html_255bcf27.png
-   :height: 91
-   :width: 311
+.. :height: 91
+.. :width: 311
 .. :align: left
 .. :border: 0
 .. :name: Graphic118

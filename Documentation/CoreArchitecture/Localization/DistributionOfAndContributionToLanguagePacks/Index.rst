@@ -1,18 +1,9 @@
-﻿
-
 .. ==================================================
 .. FOR YOUR INFORMATION
 .. --------------------------------------------------
 .. -*- coding: utf-8 -*- with BOM.
 
-.. ==================================================
-.. DEFINE SOME TEXTROLES
-.. --------------------------------------------------
-.. role::   underline
-.. role::   typoscript(code)
-.. role::   ts(typoscript)
-   :class:  typoscript
-.. role::   php(code)
+.. include:: ../../../Includes.txt
 
 
 Distribution of and contribution to language packs
@@ -36,13 +27,13 @@ This leaves various possibilities of distribution and cooperation:
 
 - **EM support?** One could imagine that support was built into the
   Extension Manager:
-  
+
   - **Download:** EM could traverse all installed extensions for
     locallang\*.xml files and send a http-request to some repository for
     possible translations located there, then writing them into
     typo3conf/l10n/. EM could even do this transparently based on a
     configuration of which language packs are wanted for the installation.
-  
+
   - **Upload:** EM could offer to upload local translations of extensions
     to a localization repository. This could be the solution for
     distributed translation of un-common extensions since typically one

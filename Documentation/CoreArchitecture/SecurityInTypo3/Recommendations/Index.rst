@@ -1,18 +1,9 @@
-﻿
-
 .. ==================================================
 .. FOR YOUR INFORMATION
 .. --------------------------------------------------
 .. -*- coding: utf-8 -*- with BOM.
 
-.. ==================================================
-.. DEFINE SOME TEXTROLES
-.. --------------------------------------------------
-.. role::   underline
-.. role::   typoscript(code)
-.. role::   ts(typoscript)
-   :class:  typoscript
-.. role::   php(code)
+.. include:: ../../../Includes.txt
 
 
 Recommendations
@@ -41,10 +32,8 @@ and you can determine the threat yourself.
   argues that it's a security problem to have the configuration file
   located inside the webroot. **Example:** Make a file
   "/home/mydir/real\_localconf.php" and put your configuration into that
-  file. Then make the real "typo3conf/localconf.php" look like this:
-  
-  ::
-  
+  file. Then make the real "typo3conf/localconf.php" look like this::
+
      <?php
      require("/home/mydir/real_localconf.php");
      ?>

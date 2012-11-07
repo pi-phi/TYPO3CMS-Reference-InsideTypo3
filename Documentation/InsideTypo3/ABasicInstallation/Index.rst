@@ -1,18 +1,9 @@
-﻿
-
 .. ==================================================
 .. FOR YOUR INFORMATION
 .. --------------------------------------------------
 .. -*- coding: utf-8 -*- with BOM.
 
-.. ==================================================
-.. DEFINE SOME TEXTROLES
-.. --------------------------------------------------
-.. role::   underline
-.. role::   typoscript(code)
-.. role::   ts(typoscript)
-   :class:  typoscript
-.. role::   php(code)
+.. include:: ../../Includes.txt
 
 
 A basic installation
@@ -31,9 +22,7 @@ For the coming sections in this document I have made a directory
 "coreinstall" on the same level as an installation of the source code.
 The "coreinstall" directory is going to be the base directory of the
 installation (this path is internally in TYPO3 known as the constant
-"PATH\_site"). This is where the website would run from normally.
-
-::
+"PATH\_site"). This is where the website would run from normally. ::
 
    [root@T3dev 32]# ls -la
    total 27768

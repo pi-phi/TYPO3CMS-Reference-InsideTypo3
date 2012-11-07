@@ -1,6 +1,6 @@
 ﻿.. |img-25|     image:: ../../../Images/manual_html_m74e1ef68.png
-   :height: 472
-   :width: 182
+.. :height: 472
+.. :width: 182
 .. :align: left
 .. :border: 0
 .. :name: Graphic3

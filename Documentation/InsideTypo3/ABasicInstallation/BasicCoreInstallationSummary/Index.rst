@@ -1,18 +1,10 @@
-﻿.. include:: Images.txt
-
 .. ==================================================
 .. FOR YOUR INFORMATION
 .. --------------------------------------------------
 .. -*- coding: utf-8 -*- with BOM.
 
-.. ==================================================
-.. DEFINE SOME TEXTROLES
-.. --------------------------------------------------
-.. role::   underline
-.. role::   typoscript(code)
-.. role::   ts(typoscript)
-   :class:  typoscript
-.. role::   php(code)
+.. include:: ../../../Includes.txt
+.. include:: Images.txt
 
 
 Basic Core Installation Summary
@@ -32,7 +24,7 @@ These are themain directories of interest:
 
    Directory
          Directory
-   
+
    Content
          Content
 
@@ -41,7 +33,7 @@ These are themain directories of interest:
 
    Directory
          t3lib/
-   
+
    Content
          TYPO3 libraries and core database setup (t3lib/stddb/)
 
@@ -50,13 +42,13 @@ These are themain directories of interest:
 
    Directory
          typo3/
-         
+
          *(shared between all websites)*
-   
+
    Content
          Source code of the TYPO3 administration backend. Can be symlink'ed to
          the "typo3\_src" source code located elsewhere.
-         
+
          Most directories can be write protected except as noted below
 
 
@@ -64,22 +56,22 @@ These are themain directories of interest:
 
    Directory
          ext/
-         
+
          sysext/
-   
+
    Content
          Directories containing extensions.
-         
+
          ext/ is for "global" extensions and sysext/ for "system" extensions.
          Both types are available for all installations sharing this source
          code.
-         
+
          The difference is that  *global* extensions might be missing from the
          distributed source code (meant to be updated by the EM) while the
          *system* extensions are "permanent" and will always be a part of the
          distributed source. Further you cannot update the system extensions
          unless you set a certain configuration flag in TYPO3\_CONF\_VARS
-         
+
          **NOTE: In case you want to allow the Extension Manager to update
          global and system extensions you must also allow writing to "ext/" and
          "sysext/". Install Tool will warn you.**
@@ -89,7 +81,7 @@ These are themain directories of interest:
 
    Directory
          gfx/
-   
+
    Content
          Various graphical elements
 
@@ -98,12 +90,12 @@ These are themain directories of interest:
 
    Directory
          install/
-   
+
    Content
          Contains the Install Tool starter-script. Basically this is an index
          .php-script which initializes a constant that - if defined - will
          launch the Install Tool.
-         
+
          **NOTE: Make sure to properly secure access to the Install Tool!**
 
 
@@ -111,7 +103,7 @@ These are themain directories of interest:
 
    Directory
          mod/
-   
+
    Content
          Backend modules. Reflects the old concept of modules and submodules
          from before extensions hit the scene in summer 2002. Today it contains
@@ -123,25 +115,25 @@ These are themain directories of interest:
 
    Directory
          typo3conf/
-         
+
          *(specific for each website)*
-   
+
    Content
          Local directory with configuration and local extensions.
-         
+
          Can be used for additional user defined purposes as you like.
-         
+
          Must be writeable by PHP.
-         
+
          **localconf.php:**
-         
+
          Main configuration of the local TYPO3 installation. Database username,
          password, install tool password etc.
-         
+
          **temp\_CACHED\_xxxxxx\_ext\_localconf.php**
-         
+
          **temp\_CACHED\_xxxxxx\_ext\_tables.php:**
-         
+
          Auto-generated cache-files of "ext\_localconf.php" and
          "ext\_tables.php" files from all loaded extensions. Can be deleted at
          any time and will be automatically written again.
@@ -151,9 +143,9 @@ These are themain directories of interest:
 
    Directory
          typo3temp/
-         
+
          *(specific for each website)*
-   
+
    Content
          For temporary files.
 
@@ -162,14 +154,14 @@ These are themain directories of interest:
 
    Directory
          uploads/
-         
+
          *(specific for each website)*
-   
+
    Content
          For storage of files attached to database records as managed by the
          TCE. Strictly this directory (and subdirectories) is only needed if
          it's configured in $TCA.
-         
+
          Also used by default for images inserted into the RTE.
 
 
@@ -260,9 +252,7 @@ the correct number and types of fields!
 
 **NOTICE:** You cannot necessarily pass these sql-files directly to
 MySQL! If you look into the file t3lib/stddb/tables.sql you can find a
-table definition like this:
-
-::
+table definition like this::
 
    #
    # Table structure for table 'cache_hash'
@@ -276,9 +266,7 @@ table definition like this:
    );
 
 And in some extension ( *myextension* ) you could find something along
-these lines:
-
-::
+these lines::
 
    #
    # Table structure for table 'cache_hash'
@@ -293,9 +281,7 @@ intended to!
 
 The reason is that IF  *myextension* is installedthen the Install Tool
 will read both files and  *automatically* compile the final query into
-this:
-
-::
+this::
 
    CREATE TABLE cache_hash (
      hash varchar(32) DEFAULT '' NOT NULL,
@@ -320,7 +306,7 @@ TYPO3 is really just 13 tables!
 
    Tablename
          Tablename
-   
+
    Description
          Description
 
@@ -329,7 +315,7 @@ TYPO3 is really just 13 tables!
 
    Tablename
          pages
-   
+
    Description
          The "directory tree" (page tree) backbone of TYPO3s database
          organization concept.
@@ -339,17 +325,17 @@ TYPO3 is really just 13 tables!
 
    Tablename
          be\_groups
-         
+
          be\_users
-         
+
          be\_sessions
-         
+
          sys\_filemounts
-   
+
    Description
          Tables with backend user groups and users plus a table for storing
          their login sessions.
-         
+
          sys\_filemounts are used to associate users/groups with filepaths
          where they can upload and manage files.
 
@@ -358,9 +344,9 @@ TYPO3 is really just 13 tables!
 
    Tablename
          cache\_hash
-         
+
          cache\_imagesizes
-   
+
    Description
          Multi purpose table for storing cached information (cache\_hash) and
          cache table for image sizes of temporary files.
@@ -370,7 +356,7 @@ TYPO3 is really just 13 tables!
 
    Tablename
          sys\_be\_shortcuts
-   
+
    Description
          Stores the shortcuts users can create in various backend modules
 
@@ -379,7 +365,7 @@ TYPO3 is really just 13 tables!
 
    Tablename
          sys\_history
-   
+
    Description
          Contains the history/undo data
 
@@ -388,7 +374,7 @@ TYPO3 is really just 13 tables!
 
    Tablename
          sys\_lockedrecords
-   
+
    Description
          Keeps track of "locked records" - basically who is editing what at the
          moment.
@@ -398,7 +384,7 @@ TYPO3 is really just 13 tables!
 
    Tablename
          sys\_log
-   
+
    Description
          Backend log table - logs actions like file management, database
          management and login
@@ -408,7 +394,7 @@ TYPO3 is really just 13 tables!
 
    Tablename
          sys\_language
-   
+
    Description
          System languages for use in records that are localized into certain
          languages.
@@ -418,7 +404,7 @@ TYPO3 is really just 13 tables!
 
    Tablename
          sys\_workspace
-   
+
    Description
          System workspaces for editing of content in “offline” mode or in
          projects.

@@ -1,18 +1,9 @@
-﻿
-
 .. ==================================================
 .. FOR YOUR INFORMATION
 .. --------------------------------------------------
 .. -*- coding: utf-8 -*- with BOM.
 
-.. ==================================================
-.. DEFINE SOME TEXTROLES
-.. --------------------------------------------------
-.. role::   underline
-.. role::   typoscript(code)
-.. role::   ts(typoscript)
-   :class:  typoscript
-.. role::   php(code)
+.. include:: ../../../Includes.txt
 
 
 Implementing CSH for your own tables/fields
@@ -32,15 +23,13 @@ the pages-table with a new field, "tx\_myext\_test". What you need to
 do is to:
 
 - Create a file named something like "locallang\_csh\_pages.php" in your
-  extension directory. Then enter PHP-code along these lines:
-  
-  ::
-  
+  extension directory. Then enter PHP-code along these lines::
+
      <?php
      /**
      * Default  TCA_DESCR for my new field in the "pages" table
      */
-     
+
      $LOCAL_LANG = Array (
          'default' => Array (
              'tx_myext_test.description' => 'Enter some test content',
@@ -49,10 +38,8 @@ do is to:
      );
      ?>
 
-- Then add this line to the ext\_tables.php file of your extension:
-  
-  ::
-  
+- Then add this line to the ext\_tables.php file of your extension::
+
      t3lib_extMgm::addLLrefForTCAdescr('pages','EXT:myext/locallang_csh_pages.php');
 
 That's it.

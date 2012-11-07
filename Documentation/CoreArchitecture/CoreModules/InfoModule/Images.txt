@@ -1,6 +1,6 @@
 ﻿.. |img-141|    image:: ../../../Images/manual_html_736595c9.png
-   :height: 175
-   :width: 592
+.. :height: 175
+.. :width: 592
 .. :align: left
 .. :border: 0
 .. :name: Graphic103

@@ -1,18 +1,9 @@
-﻿
-
 .. ==================================================
 .. FOR YOUR INFORMATION
 .. --------------------------------------------------
 .. -*- coding: utf-8 -*- with BOM.
 
-.. ==================================================
-.. DEFINE SOME TEXTROLES
-.. --------------------------------------------------
-.. role::   underline
-.. role::   typoscript(code)
-.. role::   ts(typoscript)
-   :class:  typoscript
-.. role::   php(code)
+.. include:: ../../../Includes.txt
 
 
 Initialization (init.php)
@@ -24,31 +15,27 @@ Scripts in TYPO3\_mainDir
 
 Each script in the backend is  *required* to include the init.php
 file. For core scripts this is done as the first code line in the
-script:
-
-::
+script::
 
    require ('init.php');
 
-An example could be the alt\_main.php script (the backend frameset):
+An example could be the alt\_main.php script (the backend frameset)::
 
-::
-
-   /** 
+   /**
    * Main frameset of the TYPO3 backend
-   * 
+   *
    * @author    Kasper Skårhøj <kasper@typo3.com>
    * Revised for TYPO3 3.6 2/2003 by Kasper Skårhøj
    */
-   
+
    require ('init.php');
    require ('template.php');
    require_once (PATH_t3lib.'class.t3lib_loadmodules.php');
    require_once (PATH_t3lib.'class.t3lib_basicfilefunc.php');
    require_once ('class.alt_menu_functions.inc');
-   
-   
-   
+
+
+
    // ***************************
    // Script Class
    // ***************************
@@ -93,31 +80,25 @@ init.php:
   the script (relative  *from* the TYPO3\_mainDir), eg.
   "ext/myextension/" or "../typo3conf/ext/myextension/"
 
-An example is seen in the install/index.php file:
-
-::
+An example is seen in the install/index.php file::
 
    define('TYPO3_MOD_PATH', 'install/');
    $BACK_PATH='../';
-   
+
    require ($BACK_PATH.'init.php');
 
 If a script is positioned outside of the TYPO3\_mainDir it must be in
 the typo3conf/ directory. In that case the initial lines could look
-like this:
-
-::
+like this::
 
    define('TYPO3_MOD_PATH', '../typo3conf/my_backend_script/');
    $BACK_PATH='../../typo3/';
-   
+
    require ($BACK_PATH.'init.php');
 
 **Modules**
 
-Modules will typically initiate with basic lines like these:
-
-::
+Modules will typically initiate with basic lines like these::
 
    unset($MCONF);
    require ('conf.php');
@@ -128,14 +109,12 @@ That file must define the TYPO3\_MOD\_PATH constant and $BACK\_PATH
 global variable. The modules section will describe this in detail.
 
 We could take mod/web/perms/index.php as an example. Here the conf.php
-file looks like this:
-
-::
+file looks like this::
 
    <?php
    define('TYPO3_MOD_PATH', 'mod/web/perm/');
    $BACK_PATH='../../../';
-   
+
    //... (additional configuration of module)...
    ?>
 
@@ -143,16 +122,14 @@ file looks like this:
 
 Another example is from a conf.php file of a locally installed
 extension (such are located in the "typo3conf/ext/" directory) with a
-backend module:
-
-::
+backend module::
 
    <?php
-   
+
        // DO NOT REMOVE OR CHANGE THESE 3 LINES:
    define('TYPO3_MOD_PATH', '../typo3conf/ext/charsettool/mod1/');
    $BACK_PATH='../../../../typo3/';
-   
+
    //... (additional configuration of module)...
    ?>
 
@@ -186,10 +163,8 @@ So what happens in init.php?
 (All global variables and constants referred to here are described in
 " `TYPO3 Core API <#Variables%20and%20Constants%7Coutline>`_ ")
 
-- Error reporting is set to
-  
-  ::
-  
+- Error reporting is set to ::
+
      error_reporting (E_ALL ^ E_NOTICE);
 
 - Constants TYPO3\_OS, TYPO3\_MODE, PATH\_thisScript and TYPO3\_mainDir
@@ -211,38 +186,38 @@ So what happens in init.php?
   If no TYPO3\_db constant is defined after the inclusion of
   config\_default.php then the script exits with an error message.This
   is what happens inside config\_default.php:
-  
+
   - t3lib/config\_default.php:
 
     ((""""""""""""""""""""""""""))
-  
+
   - $TYPO3\_CONF\_VARS is initialized with the default set of values.
-  
+
   - $typo\_db\* database variables are reset to blank.
-  
+
   - PATH\_typo3conf.'localconf.php' is included. If not found, script
     exits with error message.
-    
+
     - localconf.php:
 
       ((""""""""""""""))
-    
+
     - localconf.php is allowed to override any variable from
       $TYPO3\_CONF\_VARS and further set the database variables with
       database username, password, database name, host.
-    
+
     [Back in t3lib\_config\_default.php]:
-  
+
   - Constants TYPO3\_db, TYPO3\_db\_username, TYPO3\_db\_password,
     TYPO3\_db\_host, TYPO3\_tables\_script, TYPO3\_extTableDef\_script and
     TYPO3\_languages is defined
-  
+
   - $typo\_db\* variables are unset.
-  
+
   - Certain $GLOBALS['TYPO3\_CONF\_VARS']['GFX'] values are manipulated.
-  
+
   - debug() function is defined (only function outside a class!)
-  
+
   - "ext\_localconf.php" files from installed extensions are included
     either as a cached file (ex.
     "typo3conf/temp\_CACHED\_ps5cb2\_ext\_localconf.php") or as individual
@@ -251,16 +226,16 @@ So what happens in init.php?
     allowed to override $TYPO3\_CONF\_VARS values! They cannot modify the
     database connection information though. (See the definition of the
     Extension API for details)$TYPO3\_LOADED\_EXT is set.
-  
+
   - Unsetting most of the reserved global variables ($PAGES\_TYPES,
     $ICON\_TYPES, $LANG\_GENERAL\_LABELS, $TCA, $TBE\_MODULES,
     $TBE\_STYLES, $FILEICONS, $WEBMOUNTS, $FILEMOUNTS, $BE\_USER,
     $TBE\_MODULES\_EXT, $TCA\_DESCR, $TCA\_DESCR, $LOCAL\_LANG) except
     $TYPO3\_CONF\_VARS (so from localconf.php files you cannot set values
     in these variables - you must use "tables.php" files).
-  
+
   - Global vars $EXEC\_TIME, $SIM\_EXEC\_TIME and $TYPO\_VERSION are set
-  
+
   [Back in init.php]:
 
 - Database Abstraction Layer foundation class is included and global
@@ -298,14 +273,14 @@ So what happens in init.php?
   included instead. Deprecated since it spoils backwards compatibility
   and extensions should be used to override the default $TCA instead. So
   consider this obsolete.)
-  
+
   - t3lib/stddb/tables.php:
 
     (("""""""""""""""""""""""))
-  
+
   - global variables $PAGES\_TYPES, $ICON\_TYPES, $LANG\_GENERAL\_LABELS,
     $TCA, $TBE\_MODULES, $TBE\_STYLES, $FILEICONS are defined.
-  
+
   [Back in init.php]
 
 - "ext\_tables.php" files are included either as a cached file (ex.

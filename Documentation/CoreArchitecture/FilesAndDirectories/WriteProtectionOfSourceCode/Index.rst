@@ -1,18 +1,9 @@
-﻿
-
 .. ==================================================
 .. FOR YOUR INFORMATION
 .. --------------------------------------------------
 .. -*- coding: utf-8 -*- with BOM.
 
-.. ==================================================
-.. DEFINE SOME TEXTROLES
-.. --------------------------------------------------
-.. role::   underline
-.. role::   typoscript(code)
-.. role::   ts(typoscript)
-   :class:  typoscript
-.. role::   php(code)
+.. include:: ../../../Includes.txt
 
 
 Write protection of source code
@@ -42,9 +33,7 @@ Frontend (local website):
 The ownership of the files should be the webserver user executing the
 scripts.
 
-On unix-boxes you can use this command:
-
-::
+On unix-boxes you can use this command::
 
    chmod 555 typo3_src/ -R
 

@@ -1,29 +1,18 @@
-﻿
-
 .. ==================================================
 .. FOR YOUR INFORMATION
 .. --------------------------------------------------
 .. -*- coding: utf-8 -*- with BOM.
 
-.. ==================================================
-.. DEFINE SOME TEXTROLES
-.. --------------------------------------------------
-.. role::   underline
-.. role::   typoscript(code)
-.. role::   ts(typoscript)
-   :class:  typoscript
-.. role::   php(code)
+.. include:: ../../../Includes.txt
 
 
 "locallang.php" files (deprecated)
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-A "locallang" file looks like this (sysext/lang/locallang\_tca.php):
-
-::
+A "locallang" file looks like this (sysext/lang/locallang\_tca.php)::
 
    <?php
-   
+
    $LOCAL_LANG = Array (
        'default' => Array (
            'pages' => 'Page',
@@ -64,9 +53,9 @@ A "locallang" file looks like this (sysext/lang/locallang\_tca.php):
            'be_groups' => 'Backend Benutzergruppe',
            'sys_filemounts' => 'Dateifreigaben',
        ),
-   
+
    ....[lots of other languages defined]...
-   
+
        'sk' => Array (
            'pages' => 'Stránka',
            'doktype.I.0' => 'Štandardná',
@@ -89,9 +78,7 @@ A "locallang" file looks like this (sysext/lang/locallang\_tca.php):
    );
    ?>
 
-So the $LOCAL\_LANG array has the syntax
-
-::
+So the $LOCAL\_LANG array has the syntax ::
 
    $LOCAL_LANG[language_key][label_key] = 'label_value';
 
@@ -106,15 +93,13 @@ language to be available (eg. Danish).
 
 Therefore you can split locallang files into a structure with a main
 file (locallang\*.php) and sub-files (locallang\*.[langkey].php). An
-example is sysext/lang/locallang\_core.php:
-
-::
+example is sysext/lang/locallang\_core.php::
 
    <?php
    /**
-   * Core language labels. 
+   * Core language labels.
    */
-   
+
    $LOCAL_LANG = Array (
        'default' => Array (
            "labels.openInNewWindow" => "Open in new window",
@@ -123,12 +108,12 @@ example is sysext/lang/locallang\_core.php:
            "labels.lockedRecord" => "The user '%s' began to edit this record %s ago.",
            "cm.open" => "Open",
    ... [lot of more labels here]....
-   
+
            "cm.save" => "Save",
            "cm.unzip" => "Unzip",
            "cm.info" => "Info",
            "cm.createnew" => "Create new",
-   
+
        ),
        'dk' => "EXT",
        'de' => "EXT",
@@ -155,23 +140,21 @@ example is sysext/lang/locallang\_core.php:
 The string token "EXT" set for all the other languages than "default"
 tells the "language" class that another file contains the language for
 this language key. For the Danish language this file would be
-"sysext/lang/locallang\_core **.dk** .php":
-
-::
+"sysext/lang/locallang\_core **.dk** .php"::
 
    <?php
    /**
    * Core language labels (dk)
    */
-   
+
    $LOCAL_LANG['dk'] = Array (
                "labels.openInNewWindow" => "Åben i nyt vindue",
                "labels.goBack" => "Gå tilbage",
                "labels.makeShortcut" => "Opret genvej til denne side?",
                "cm.open" => "Åbn",
-   
+
    ... [lot of more labels here]....
-   
+
                "cm.save" => "Gem",
                "cm.unzip" => "Unzip",
                "cm.info" => "Info",

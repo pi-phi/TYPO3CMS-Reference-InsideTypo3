@@ -1,18 +1,9 @@
-﻿
-
 .. ==================================================
 .. FOR YOUR INFORMATION
 .. --------------------------------------------------
 .. -*- coding: utf-8 -*- with BOM.
 
-.. ==================================================
-.. DEFINE SOME TEXTROLES
-.. --------------------------------------------------
-.. role::   underline
-.. role::   typoscript(code)
-.. role::   ts(typoscript)
-   :class:  typoscript
-.. role::   php(code)
+.. include:: ../../../Includes.txt
 
 
 Changing the default “typo3/” directory
@@ -53,9 +44,7 @@ guidelines:
 - Finally you should remove the “temp\_CACHED\_ps\*” files found in
   typo3conf/ before you test the new settings. Those will be re-
   generated with adjusted paths on the first executing of a TYPO3
-  script. On UNIX systems something like this will do the trick:
-  
-  ::
-  
+  script. On UNIX systems something like this will do the trick::
+
      rm typo3conf/temp_CACHED_ps*
 

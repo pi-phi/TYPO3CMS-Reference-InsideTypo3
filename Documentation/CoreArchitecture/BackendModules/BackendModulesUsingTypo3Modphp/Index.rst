@@ -1,18 +1,9 @@
-﻿
-
 .. ==================================================
 .. FOR YOUR INFORMATION
 .. --------------------------------------------------
 .. -*- coding: utf-8 -*- with BOM.
 
-.. ==================================================
-.. DEFINE SOME TEXTROLES
-.. --------------------------------------------------
-.. role::   underline
-.. role::   typoscript(code)
-.. role::   ts(typoscript)
-   :class:  typoscript
-.. role::   php(code)
+.. include:: ../../../Includes.txt
 
 
 Backend modules using typo3/mod.php
@@ -57,20 +48,20 @@ Generally, you can create a module as you always did and then make
 these changes:
 
 - conf.php
-  
+
   - Comment out (or remove!) the lines with the TYPO3\_MOD\_PATH and
     BACK\_PATH definitions. They are not needed anymore ($BACK\_PATH is
     blank for scripts running in typo3/ as mod.php
     does).Examples:#define('TYPO3\_MOD\_PATH',
     'sysext/beuser/mod/');#$BACK\_PATH='../../../';
-  
+
   - Set the value of $MCONF['script'] to “\_DISPATCH”. This will make sure
     links to the module are pointed to “mod.php” instead of the real
     script of the module. This is only needed for modules appearing in the
     menu as a main- or submodule.Example:$MCONF['script']='\_DISPATCH';
 
 - ext\_emconf.php
-  
+
   - Remove the module name from the “module” entry in the array! This
     entry was what instructed the Extension Manager to modify
     TYPO3\_MOD\_PATH and BACK\_PATH in the conf.php file of the module
@@ -78,18 +69,18 @@ these changes:
     more.
 
 - Module script name
-  
+
   - Must be “index.php” - but most modules will be that anyway. That's the
     convension.
 
 - index.php (the module script)
-  
+
   - In the module script you will have to comment out / remove those lines
     that are initializing the module:#unset($MCONF);#require
     ('conf.php');#require ($BACK\_PATH.'init.php');#require
     ($BACK\_PATH.'template.php');This is logical because this
     initialization is now done by mod.php.
-  
+
   - Observe that the main script changed! When the module is calling it
     self, any hardcoded values for the script name (like
     “index.php?id=123”) must be changed. Now you must call

@@ -1,6 +1,6 @@
 ﻿.. |img-135|    image:: ../../../Images/manual_html_5793df2e.png
-   :height: 133
-   :width: 339
+.. :height: 133
+.. :width: 339
 .. :align: left
 .. :border: 0
 .. :name: Graphic37

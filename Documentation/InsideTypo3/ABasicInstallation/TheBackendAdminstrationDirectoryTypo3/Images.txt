@@ -1,6 +1,6 @@
 ﻿.. |img-4|      image:: ../../../Images/manual_html_m2c4a63c8.png
-   :height: 127
-   :width: 482
+.. :height: 127
+.. :width: 482
 .. :align: left
 .. :border: 0
 .. :name: Graphic6

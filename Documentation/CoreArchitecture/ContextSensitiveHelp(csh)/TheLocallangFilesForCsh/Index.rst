@@ -1,18 +1,9 @@
-﻿
-
 .. ==================================================
 .. FOR YOUR INFORMATION
 .. --------------------------------------------------
 .. -*- coding: utf-8 -*- with BOM.
 
-.. ==================================================
-.. DEFINE SOME TEXTROLES
-.. --------------------------------------------------
-.. role::   underline
-.. role::   typoscript(code)
-.. role::   ts(typoscript)
-   :class:  typoscript
-.. role::   php(code)
+.. include:: ../../../Includes.txt
 
 
 The locallang files for CSH
@@ -34,11 +25,9 @@ Then there are a few other rules to follow:
   extension ".php" takes four and any "subfile-suffix" (fx. ".dk") would
   take three, there is 31-14-4-3 = 10 chars left. So lets say you have 9
   characters to name the file to be safe.
-  
-  Examples where "pages" (5 chars) is the unique name:
-  
-  ::
-  
+
+  Examples where "pages" (5 chars) is the unique name::
+
      locallang_csh_pages.php    =>   23 chars
      locallang_csh_pages.dk.php      =>   26 chars
 
@@ -70,7 +59,7 @@ Syntax for the type-keys content
 
    type-key
          type-key
-   
+
    Syntax
          Syntax
 
@@ -79,7 +68,7 @@ Syntax for the type-keys content
 
    type-key
          description
-   
+
    Syntax
          Text / XHTML. Mandatory.
 
@@ -88,7 +77,7 @@ Syntax for the type-keys content
 
    type-key
          details
-   
+
    Syntax
          Text / XHTML. Optional.
 
@@ -97,7 +86,7 @@ Syntax for the type-keys content
 
    type-key
          syntax
-   
+
    Syntax
          Text / XHTML. Optional.
 
@@ -106,7 +95,7 @@ Syntax for the type-keys content
 
    type-key
          image\_descr
-   
+
    Syntax
          Text. Optional.
 
@@ -115,18 +104,18 @@ Syntax for the type-keys content
 
    type-key
          image
-   
+
    Syntax
          Reference to an image (gif,png,jpg) which will be shown below the
          syntax field (before seeAlso)
-         
+
          The reference must be
-         
+
          - a) either relative to the TYPO3\_mainDir (fx. "gfx/i/pages.gif") or
-         
+
          - b) related to an extension (fx.
            "EXT:context\_help/descr\_imgs/hidden\_page.gif")
-         
+
          You can supply a comma list of image references in order to show more
          than one image. The image\_descr value will be splitted per linebreak
          and shown under each image.
@@ -136,40 +125,40 @@ Syntax for the type-keys content
 
    type-key
          seeAlso
-   
+
    Syntax
          Internal hyperlink system for related elements. References to other
          TCA\_DESCR elements or URLs.
-         
+
          **Syntax:**
-         
+
          - Separate references by comma (,) or line breaks.
-         
+
          - A reference can be:
-           
+
            - either a URL (identified by the 'second part' being prefixed "http",
              see below)
-           
+
            - or a [table]:[field] pair
-         
+
          - If the reference is an external URL, then the reference is splitted by
            vertical line (\|) and the first part is the link label, while the
            second part is the "http"-URL
-         
+
          - If the reference is to another internal TCA\_DESCR element, then the
            reference is splitted by colon (:) and the first part is the  *table*
            while the second is the  *field* .
-         
+
          External URLs will open in a blank window. The links will be in
          italics.
-         
+
          Internal references will open in the same window
-         
+
          For internal references the permission for table/field read access
          will be checked and if it fails, the reference will not be shown.
-         
+
          **Example:**
-         
+
          pages:starttime , pages:endtime , tt\_content:header , Link to
          TYPO3.org \| http://typo3.org/
 
@@ -178,13 +167,13 @@ Syntax for the type-keys content
 
    type-key
          alttitle
-   
+
    Syntax
          Alternative title shown in CSH pop-up window.
-         
+
          For database tables and fields the title from TCA is fetched by
          default, however overridden by this value if it is not blank.
-         
+
          For modules (tablename prefixed "\_MOD\_") you must specify this
          value, otherwise you will see the bare key outputted.
 

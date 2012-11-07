@@ -1,18 +1,9 @@
-﻿
-
 .. ==================================================
 .. FOR YOUR INFORMATION
 .. --------------------------------------------------
 .. -*- coding: utf-8 -*- with BOM.
 
-.. ==================================================
-.. DEFINE SOME TEXTROLES
-.. --------------------------------------------------
-.. role::   underline
-.. role::   typoscript(code)
-.. role::   ts(typoscript)
-   :class:  typoscript
-.. role::   php(code)
+.. include:: ../../../Includes.txt
 
 
 Implementing CSH in your modules
@@ -36,19 +27,17 @@ automatically for you. You have to do that manually in the
 initialization of your module:
 
 #. First, load the description labels for the module. You do that best in
-   the init() function of your script class:
-   
-   ::
-   
+   the init() function of your script class::
+
                          // Descriptions:
                       $this->descrTable = "_MOD_".$this->MCONF["name"];
                       if ($BE_USER->uc["edit_showFieldHelp"])      {
                               $LANG->loadSingleTableDescription($this->descrTable);
                       }
-   
+
    It's assumed that $this->MCONF equals the global $MCONF var that
    contain module configuration - this delivers the unique module name.
-   
+
    Then secondly -  *but most important* - is that you check for the User
    Configuration setting "edit\_showFieldHelp" (highlighted with red)
 
@@ -68,9 +57,7 @@ Example 1
 ~~~~~~~~~
 
 The most simple and straight forward way to include the icon/helptext
-would be something like this:
-
-::
+would be something like this::
 
    $HTMLcode.=
            t3lib_BEfunc::helpTextIcon($this->descrTable,"quickEdit_selElement",$GLOBALS["BACK_PATH"]).
@@ -89,15 +76,13 @@ These lines assumes that
   TYPO3\_mainDir (that is necessary for modules outside of the main
   directory)
 
-The locallang\_csh file for this example would look like this:
-
-::
+The locallang\_csh file for this example would look like this::
 
    <?php
    /**
    * Default  TCA_DESCR for "_MOD_web_layout"
    */
-   
+
    $LOCAL_LANG = Array (
        'default' => Array (
            'quickEdit.description' => 'The Quick Editor gives you direct . . . ',
@@ -124,13 +109,11 @@ Example 2
 A more advanced - and better - approach is to create a function
 internally in the script class of the module for handling the help
 texts. This is an example from the Extension Manager module
-(mod/tools/em/index.php):
-
-::
+(mod/tools/em/index.php)::
 
    function helpCol($key)    {
        global $BE_USER;
-       if ($BE_USER->uc["edit_showFieldHelp"])    {    
+       if ($BE_USER->uc["edit_showFieldHelp"])    {
            $hT = trim(t3lib_BEfunc::helpText($this->descrTable,"emconf_".$key,$this->doc->backPath));
            return '<td>'.
                ($hT?$hT:
@@ -158,9 +141,7 @@ This is the quick method. Calling this function instead of
 t3lib\_BEfunc::helpText() will deliver an output which is either a
 help-icon or a table with both icon and description text depending on
 the current users configuration. In addition it will automatically
-load the description files for the $table parameter given.
-
-::
+load the description files for the $table parameter given. ::
 
    $HTMLcode.=
    t3lib_BEfunc::cshItem($tableIdent,'quickEdit',$BACK_PATH);

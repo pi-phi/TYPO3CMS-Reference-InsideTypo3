@@ -1,27 +1,16 @@
-﻿
-
 .. ==================================================
 .. FOR YOUR INFORMATION
 .. --------------------------------------------------
 .. -*- coding: utf-8 -*- with BOM.
 
-.. ==================================================
-.. DEFINE SOME TEXTROLES
-.. --------------------------------------------------
-.. role::   underline
-.. role::   typoscript(code)
-.. role::   ts(typoscript)
-   :class:  typoscript
-.. role::   php(code)
+.. include:: ../../../Includes.txt
 
 
 The template class (template.php)
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 Most backend scripts include another core script than "init.php". That
-is "template.php".
-
-::
+is "template.php". ::
 
    require ('init.php');
    require ('template.php');
@@ -65,13 +54,13 @@ Variables
 
    Global variable
          Global variable
-   
+
    Defined in
          Defined in
-   
+
    Description
          Description
-   
+
    Avail. in FE
          Avail. in FE
 
@@ -80,13 +69,13 @@ Variables
 
    Global variable
          $TBE\_TEMPLATE
-   
+
    Defined in
          template.php
-   
+
    Description
          Global backend template object for HTML-output in backend modules
-   
+
    Avail. in FE
 
 
@@ -94,17 +83,17 @@ Variables
 
    Global variable
          $LANG
-   
+
    Defined in
          template.php
-   
+
    Description
          Localization object which returns the correct localized labels for
          various parts in the backend.
-         
+
          It also contains an instance of the "t3lib\_cs" class in
          $LANG->csConvObj
-   
+
    Avail. in FE
 
 
@@ -112,17 +101,17 @@ Variables
 
    Global variable
          *$LOCAL\_LANG*
-   
+
    Defined in
          Optionally included "locallang" file.
-   
+
    Description
          Stores language specific labels and messages. Requires a "local\_lang"
          file to have been included in the global space.
-         
+
          **Notice:** This variable is unset in "config\_default .php" for your
          convenience. So don't set the $LOCAL\_LANG array prior to "init.php".
-   
+
    Avail. in FE
          -
 
@@ -131,16 +120,16 @@ Variables
 
    Global variable
          *$TCA\_DESCR*
-   
+
    Defined in
          [on-the-fly]
-   
+
    Description
          Could be set to contain help descriptions for fields and modules. Is
          set by API function in the "language" class.
-         
+
          Unset in "config\_default.php"
-   
+
    Avail. in FE
 
 
@@ -156,13 +145,13 @@ Classes
 
    Class
          Class
-   
+
    Included in
          Included in
-   
+
    Description
          Description
-   
+
    Avail. in FE
          Avail. in FE
 
@@ -171,14 +160,14 @@ Classes
 
    Class
          template
-   
+
    Included in
          [optionally included after init.php, see next section]
-   
+
    Description
          Global backend template class for HTML-output in backend modules,
          instantiated inside template.php as $TBE\_TEMPLATE
-   
+
    Avail. in FE
          -
 
@@ -187,14 +176,14 @@ Classes
 
    Class
          language
-   
+
    Included in
          template.php
-   
+
    Description
          Localization class which returns the correct localized labels for
          various parts in the backend. Instantiated as $LANG
-   
+
    Avail. in FE
          -
 
@@ -206,41 +195,39 @@ Example: A dummy backend script
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 As an good example of how backend scripts (modules) should be
-constructed, please look at the dummy.php file:
+constructed, please look at the dummy.php file::
 
-::
-
-   /** 
+   /**
     * Dummy document - displays nothing but background color.
-    * 
+    *
     * @author    Kasper Skårhøj <kasper@typo3.com>
     * Revised for TYPO3 3.6 2/2003 by Kasper Skårhøj
     * XHTML compliant content
     */
-   
+
    require ('init.php');
    require ('template.php');
-   
+
    // ***************************
    // Script Classes
    // ***************************
    class SC_dummy {
        var $content;
-       
+
        /**
         * Create content
         */
        function main()    {
            global $TBE_TEMPLATE;
-   
+
                // Start page
            $TBE_TEMPLATE->docType = 'xhtml_trans';
            $this->content.=$TBE_TEMPLATE->startPage('Dummy document');
-   
+
                // End page:
            $this->content.=$TBE_TEMPLATE->endPage();
        }
-       
+
        /**
         * Print output
         */
@@ -248,20 +235,20 @@ constructed, please look at the dummy.php file:
            echo $this->content;
        }
    }
-   
+
    // Include extension?
    if (defined('TYPO3_MODE') && $TYPO3_CONF_VARS[TYPO3_MODE]['XCLASS']['typo3/dummy.php'])    {
        include_once($TYPO3_CONF_VARS[TYPO3_MODE]['XCLASS']['typo3/dummy.php']);
    }
-   
-   
-   
-   
+
+
+
+
    // Make instance:
    $SOBE = t3lib_div::makeInstance('SC_dummy');
    $SOBE->main();
    $SOBE->printContent();
-   
+
 
 (In addition a script must include opening and closing tags for php
 (<?php ... ?>) and a copyright header defining the author and GNU/GPL
@@ -301,13 +288,11 @@ Inside the script class these basic steps for HTML output is taken:
   you like as the page content. <body> tags have been set and typically
   the whole page is wrapped in a DIV tag as well.
 
-The HTML output of dummy.php will look like this:
-
-::
+The HTML output of dummy.php will look like this::
 
    <?xml version="1.0" encoding="iso-8859-1"?>
    <?xml-stylesheet href="#internalStyle" type="text/css"?>
-   <!DOCTYPE html 
+   <!DOCTYPE html
         PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
         "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
    <html>
@@ -315,30 +300,30 @@ The HTML output of dummy.php will look like this:
      <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1"/>
      <meta name="GENERATOR" content="TYPO3 3.6.0-dev, http://typo3.com, &#169; Kasper Sk&#197;rh&#248;j 1998-2003, extensions are copyright of their respective owners." />
      <title>Dummy document</title>
-     
+
              <link rel="stylesheet" type="text/css" href="stylesheet.css"/>
-             
+
              <style type="text/css" id="internalStyle">
                      /*<![CDATA[*/
                              A:hover {color: #254D7B}
                              H2 {background-color: #9BA1A8;}
                              H3 {background-color: #E7DBA8;}
                              BODY {background-color: #F7F3EF;}
-                             
+
                      /*]]>*/
              </style>
-   
-     
+
+
    </head>
    <body>
-   
+
    <!-- Wrapping DIV-section for whole page BEGIN -->
    <div class="typo3-def">
-   
-   
+
+
    ... [additional content between startPage() and endPage() will be inserted here!] ...
-   
-   
+
+
      <script type="text/javascript">
                /*<![CDATA[*/
              if (top.busy && top.busy.loginRefreshed) {
@@ -346,11 +331,11 @@ The HTML output of dummy.php will look like this:
              }
               /*]]>*/
      </script>
-   
+
    <!-- Wrapping DIV-section for whole page END -->
    </div>
    </body>
-   </html>     
+   </html>
 
 The maroon coloured content is created by startPage()
 

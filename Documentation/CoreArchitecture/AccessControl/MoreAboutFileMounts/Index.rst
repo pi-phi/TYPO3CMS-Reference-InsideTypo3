@@ -1,18 +1,10 @@
-﻿.. include:: Images.txt
-
 .. ==================================================
 .. FOR YOUR INFORMATION
 .. --------------------------------------------------
 .. -*- coding: utf-8 -*- with BOM.
 
-.. ==================================================
-.. DEFINE SOME TEXTROLES
-.. --------------------------------------------------
-.. role::   underline
-.. role::   typoscript(code)
-.. role::   ts(typoscript)
-   :class:  typoscript
-.. role::   php(code)
+.. include:: ../../../Includes.txt
+.. include:: Images.txt
 
 
 More about File Mounts
@@ -48,9 +40,7 @@ If you want to make this filemount work it requires - of course - that
 the path "fileadmin/webfolder/" is in fact present below the
 PATH\_site. That is not yet the case if you did the core installation
 from the introduction chapter of this document. So the following steps
-will prepare the directory for use from scratch (on a UNIX box):
-
-::
+will prepare the directory for use from scratch (on a UNIX box)::
 
    [root@T3dev coreinstall]# mkdir fileadmin/
    [root@T3dev coreinstall]# mkdir fileadmin/webfolder/
@@ -92,15 +82,11 @@ part* of any absolute path being mounted.
 In this case "/my\_absolute\_path/another\_dir/" is mounted.
 
 Before this will work we will have to configure 'lockRootPath'. In
-typo3conf/localconf.php, enter:
-
-::
+typo3conf/localconf.php, enter::
 
    $TYPO3_CONF_VARS['BE']['lockRootPath']='/my_absolute_path/';
 
-Also create the directories:
-
-::
+Also create the directories::
 
       mkdir /my_absolute_path
            mkdir /my_absolute_path/another_dir/
@@ -136,22 +122,18 @@ the paths  *must be* within the path prefix defined by
 $TYPO3\_CONF\_VARS['BE']['lockRootPath']! Otherwise they will not be
 mounted (as with any other absolute path).
 
-Lets configure:
-
-::
+Lets configure::
 
    $TYPO3_CONF_VARS['BE']['lockRootPath'] ='/my_absolute_path/';
    $TYPO3_CONF_VARS['BE']['userHomePath'] ='/my_absolute_path/users/';
    $TYPO3_CONF_VARS['BE']['groupHomePath']='/my_absolute_path/groups/';
 
-Lets create:
+Lets create::
 
-::
-
-   mkdir /my_absolute_path/users/      
+   mkdir /my_absolute_path/users/
    mkdir /my_absolute_path/users/2/
    mkdir /my_absolute_path/users/1_admin/
-   mkdir /my_absolute_path/groups        
+   mkdir /my_absolute_path/groups
    mkdir /my_absolute_path/groups/1
    chown httpd.httpd /my_absolute_path/ -R
 
@@ -242,9 +224,7 @@ server and thus in "FTP-space" (blue folder icon).
 
 The significance of this is what kinds of files are allowed the in the
 one and in the other "space". This is determined by the variable
-$TYPO3\_CONF\_VARS['BE']['fileExtensions']:
-
-::
+$TYPO3\_CONF\_VARS['BE']['fileExtensions']::
 
                'webspace' => array('allow'=>'', 'deny'=>'php3,php'),
                'ftpspace' => array('allow'=>'*', 'deny'=>'')

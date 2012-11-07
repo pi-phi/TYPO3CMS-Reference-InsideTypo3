@@ -1,18 +1,9 @@
-﻿
-
 .. ==================================================
 .. FOR YOUR INFORMATION
 .. --------------------------------------------------
 .. -*- coding: utf-8 -*- with BOM.
 
-.. ==================================================
-.. DEFINE SOME TEXTROLES
-.. --------------------------------------------------
-.. role::   underline
-.. role::   typoscript(code)
-.. role::   ts(typoscript)
-   :class:  typoscript
-.. role::   php(code)
+.. include:: ../../../Includes.txt
 
 
 The Module script
@@ -25,9 +16,7 @@ Main framework of a Backend Module or Stand-Alone script
 After the initialization a Backend Module or Stand-Alone script can
 contain any custom PHP code you wish. However most scripts from the
 core and system extensions will follow the same model as all other
-backend modules. An example looks like this:
-
-::
+backend modules. An example looks like this::
 
      29:     // DEFAULT initialization of a module [BEGIN]
      30: unset($MCONF);
@@ -42,21 +31,21 @@ backend modules. An example looks like this:
      40: class tx_temp_cm1 extends t3lib_SCbase {
    ...
     132: }
-    133: 
-    134: 
-    135: 
+    133:
+    134:
+    135:
     136: if (defined('TYPO3_MODE') && $TYPO3_CONF_VARS[TYPO3_MODE]['XCLASS']['ext/temp/cm1/index.php'])    {
     137:     include_once($TYPO3_CONF_VARS[TYPO3_MODE]['XCLASS']['ext/temp/cm1/index.php']);
     138: }
-    139: 
-    140: 
-    141: 
-    142: 
+    139:
+    140:
+    141:
+    142:
     143: // Make instance:
     144: $SOBE = t3lib_div::makeInstance('tx_temp_cm1');
     145: $SOBE->init();
-    146: 
-    147: 
+    146:
+    147:
     148: $SOBE->main();
     149: $SOBE->printContent();
 
@@ -92,9 +81,7 @@ is easily checked by this API function where you simply give the
 $MCONF array as argument. The function will check what kind of access
 criteria are in the $MCONF array and then evaluate the situation
 accordingly. In this case it will exit with a an error message if the
-user is not logged in.
-
-::
+user is not logged in. ::
 
      // This checks permissions and exits if the users has no permission for entry.
    $BE_USER->modAccess($MCONF,1);
@@ -104,9 +91,7 @@ Checking for "admin" user
 """""""""""""""""""""""""
 
 In case your backend script requires the "admin" user to be logged in
-it is easy to do a check:
-
-::
+it is easy to do a check::
 
    if (!$BE_USER->isAdmin()) die('No access for you...');
 
