@@ -3,7 +3,7 @@
 ---
 conf.py:
   copyright: 2000-2013
-  project: TYPO3 CMS Coding Guidelines
+  project: Inside TYPO3 CMS
   version: 4.2.0
   release: 4.2.0
 ...
