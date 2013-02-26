@@ -29,7 +29,7 @@ Inside TYPO3 CMS
       inside, architecture, security, forAdmins, forDevelopers, forIntermediates
 
 :Copyright:
-      2000-2008
+      2000-20013
 
 :Author:
       Documentation Team
