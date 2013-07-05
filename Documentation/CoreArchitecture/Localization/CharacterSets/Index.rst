@@ -9,11 +9,15 @@
 Character sets
 ^^^^^^^^^^^^^^
 
-Currently, local charsets are used  *by default* inside TYPO3. However
-it is highly recommended to set
-$TYPO3\_CONF\_VARS['BE']['forceCharset'] = "utf-8" which will force
-the backend to run in utf-8 regardless of "native" charset. Forcing
-the charset to "utf-8" also means that all content in the database
-will be managed in "utf-8" and you might corrupt existing data if you
-set it after having added content in another charset.
+Since TYPO3 4.5, character sets other than utf-8 were deprecated and the
+default character set to work with internally was set to utf-8 in
+$TYPO3\_CONF\_VARS['BE']['forceCharset'].
+
+Since version 4.7, TYPO3 only supports utf-8 as the character set to work with
+internally. The setting $TYPO3\_CONF\_VARS['BE']['forceCharset'] is now
+hardcoded to "utf-8". If in your database, your content is not yet stored in
+utf-8, you must convert it to utf-8. More information are available `on our
+wiki page on UTF-8 support`_.
+
+.. _on our wiki page on UTF-8 support: http://wiki.typo3.org/UTF-8_support
 
