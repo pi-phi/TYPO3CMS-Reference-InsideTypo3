@@ -11,7 +11,7 @@
 
 The locallang-XML files contain default labels, possibly inline
 translations and in addition a lot of meta data used in the
-translation tool (extension “llxmltranslate”).
+translation tool (extension "llxmltranslate").
 
 Performance is great with the XML files. This is because the content
 of the XML file is cached based on the modification time on the xml
@@ -68,7 +68,7 @@ Converting to llXML from locallang.php
 
 If you have locallang.php files in your extensions, please consider to
 convert them to llXML. This can be done with the extension
-“extdeveval” which contains a tool for that. After conversion there is
+"extdeveval" which contains a tool for that. After conversion there is
 another tool which will separate translations out into the language
 pack directories. This is of course also highly recommended so the
 remaining main llXML file contains only default labels!

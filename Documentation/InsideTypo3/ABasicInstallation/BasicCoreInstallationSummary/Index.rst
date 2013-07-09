@@ -406,7 +406,7 @@ TYPO3 is really just 13 tables!
          sys\_workspace
 
    Description
-         System workspaces for editing of content in “offline” mode or in
+         System workspaces for editing of content in "offline" mode or in
          projects.
 
 

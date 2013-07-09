@@ -70,12 +70,12 @@ three types of workspaces:
 
   - Constraints: Only tables that support versioning can be edited. All
     management of files in fileadmin/ is disabled because they may affect
-    the live website and thus would break the principle of “safe
-    playground”.
+    the live website and thus would break the principle of "safe
+    playground".
 
 - Custom workspaces:
 
-  - Inherits all properties of the default “Draft workspace” but can be
+  - Inherits all properties of the default "Draft workspace" but can be
     configured additionally with owners, members and reviewers plus
     database- and file mounts plus other settings. A custom workspace is a
     great way to do team-based maintenance of (a section of) the website
@@ -90,7 +90,7 @@ three types of workspaces:
 A draft workspace is a container for draft versions of content. Each
 versionable element can have zero or 1 version in a workspace
 (versions are attached to workspaces with a relation in the field
-“t3ver\_wsid”). The fact that there can be only one new version of any
+"t3ver\_wsid"). The fact that there can be only one new version of any
 element in a draft workspace makes in unambiguous which version to
 edit, preview and publish.
 
@@ -112,8 +112,8 @@ There are two ways to publish an element in a workspace; publish or
 swap. In both cases the draft content is published live. But when
 swapping it means the current live element is attached to the
 workspace when taken offline. This is contrary to the publish mode
-which pushes the live item out of any workspace and “into the
-archive”.
+which pushes the live item out of any workspace and "into the
+archive".
 
 The swapping mode is useful if you have a temporary campaign, say a
 christmas special frontpage and website section. You create the
@@ -226,7 +226,7 @@ their differences and applications:
 
    Draft workspace (default)
          None available. All file manipulation access is banned! (Otherwise
-         violation of “draft principle”)
+         violation of "draft principle")
 
    Custom workspaces
          By default, none is available due to same principle as for Draft
@@ -261,26 +261,26 @@ their differences and applications:
          Only through a separate workflow system.
 
    Draft workspace (default)
-         Content can be raised from “Editing” stage through “Review” to
-         “Publish”.
+         Content can be raised from "Editing" stage through "Review" to
+         "Publish".
 
          However, the state does not impose any limitations on editing and
          publication of workspace contents.
 
    Custom workspaces
-         **Members** can raise content from “Editing” stage to “Review”.
-         Members can only edit content when its in “Editing stage” (or
-         “Rejected”)
+         **Members** can raise content from "Editing" stage to "Review".
+         Members can only edit content when its in "Editing stage" (or
+         "Rejected")
 
-         **Reviewers** can raise the content from “Editing” stage to “Review”
-         stage to “Publish” - or they can reject content back to editing.
+         **Reviewers** can raise the content from "Editing" stage to "Review"
+         stage to "Publish" - or they can reject content back to editing.
          Reviewers can only edit content in these modes.
 
          **Owners** can operate all states of course. Owners are the only ones
-         to edit content when in “Publish” mode. Thus “Publish” mode provides
+         to edit content when in "Publish" mode. Thus "Publish" mode provides
          protection for content awaiting publication.
 
-         The “Rejected” flag is reset automatically when editing occurs on a
+         The "Rejected" flag is reset automatically when editing occurs on a
          rejected element.
 
          Options available for automatic email notification between the roles.
@@ -371,8 +371,8 @@ their differences and applications:
          All
 
    Custom workspaces
-         All, but you can disable any of the types “Element”, “Page” and
-         “Branch”.
+         All, but you can disable any of the types "Element", "Page" and
+         "Branch".
 
 
 .. container:: table-row
@@ -399,7 +399,7 @@ their differences and applications:
 
    Live workspace
          All backend modules can specify $MCONF['workspaces'] =
-         “[online,offline,custom]” to limit access based current workspace of
+         "[online,offline,custom]" to limit access based current workspace of
          user. See description elsewhere in this document.
 
 
@@ -421,7 +421,7 @@ their differences and applications:
 
 .. ###### END~OF~TABLE ######
 
-Generally, “admin” users have access to all functionality as usual.
+Generally, "admin" users have access to all functionality as usual.
 
 
 Supporting workspaces in extensions
@@ -433,5 +433,5 @@ mind. Although the ideal is complete transparency in backend and
 perfect previews in the frontend this is almost impossible to obtain.
 But a high level of consistency can be obtained by using API functions
 in TYPO3. These functions and the challenges they are invented to
-answer are discussed in “TYPO3 Core API”.
+answer are discussed in "TYPO3 Core API".
 

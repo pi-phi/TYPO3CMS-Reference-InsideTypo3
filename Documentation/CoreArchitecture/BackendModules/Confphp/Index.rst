@@ -357,8 +357,8 @@ $MCONF
          Defines the PHP script which the module is run by. The backend will
          link to this script when the module is activated.
 
-         Special keyword is “\_DISPATCH” which will indicate that the
-         “typo3/mod.php” script is used to access the module.
+         Special keyword is "\_DISPATCH" which will indicate that the
+         "typo3/mod.php" script is used to access the module.
 
 
 .. container:: table-row
@@ -407,11 +407,11 @@ $MCONF
          string means all workspaces. Otherwise this list of keywords can be
          combined to set access:
 
-         - “online” : Available in Live (online) mode
+         - "online" : Available in Live (online) mode
 
-         - “offline” : Available in Draft (offline) mode
+         - "offline" : Available in Draft (offline) mode
 
-         - “custom” : Available for custom modes
+         - "custom" : Available for custom modes
 
 
 .. container:: table-row

@@ -7,7 +7,7 @@
 .. include:: Images.txt
 
 
-The Backend Adminstration Directory, “typo3/”
+The Backend Adminstration Directory, "typo3/"
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 In the directory "coreinstall/" I create a symlink to the typo3/

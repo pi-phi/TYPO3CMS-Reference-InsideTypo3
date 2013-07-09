@@ -99,8 +99,8 @@ Access lists are defined in the user groups and includes
    language.There is also a similar list of languages for each user
    record as well.Technical note; To enable localization access control
    for a table you need to define the field containing the languages.
-   This is done with the TCA/”ctrl” directive “languageField”. See “TYPO3
-   Core API” for more details.
+   This is done with the TCA/"ctrl" directive "languageField". See "TYPO3
+   Core API" for more details.
 
 #. **Custom module options** This item can contain custom permission
    options added by extensions.

@@ -19,7 +19,7 @@ intentions. Therefore you should be aware that:
   same and there are many places where URLs are possible to insert. All
   of this means one thing: Ordinary backend users maintaining content
   *can exploit XSS techniques* since they can insert content on pages!
-  This is  *not* a bug in TYPO3 but a “feature” which is impossible to
+  This is  *not* a bug in TYPO3 but a "feature" which is impossible to
   avoid if you at the same time want people to do exactly that; insert
   pure HTML on pages!Of course the problem is not big; you can always
   track down which user might have inserted malicious code on the pages

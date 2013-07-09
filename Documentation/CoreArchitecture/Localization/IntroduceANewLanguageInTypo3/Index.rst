@@ -18,10 +18,10 @@ If you wish to add a new language to TYPO3, follow these steps:
 - Contact a core developer and ask him to add the language key to the
   core. The steps for doing this is defined inside
   t3lib/config\_default.php in a comment just above the definition of
-  the constant “TYPO3\_languages”.
+  the constant "TYPO3\_languages".
 
 - As soon as the language is added to the core you can start translation
-  using the extension “llxmltranslate” running on the new core. The
-  language pack is automatically created in “typo3conf/l10n/[new
-  language key]/”
+  using the extension "llxmltranslate" running on the new core. The
+  language pack is automatically created in "typo3conf/l10n/[new
+  language key]/"
 

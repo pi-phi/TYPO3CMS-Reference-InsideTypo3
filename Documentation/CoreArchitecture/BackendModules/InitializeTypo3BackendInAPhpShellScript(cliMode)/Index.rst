@@ -13,7 +13,7 @@ Initialize TYPO3 backend in a PHP shell script (CLI mode)
 Most scripts in TYPO3 expect to be executed from a web browser.
 However you might need to create a PHP script which is executed in a
 Unix shell as a cronjob. In itself PHP is capable of that as long as
-PHP was also compiled as a binary (typically “/usr/bin/php”) but you
+PHP was also compiled as a binary (typically "/usr/bin/php") but you
 need to do some tricks in order to initialize TYPO3s backend
 environment.
 
@@ -27,8 +27,8 @@ of the script is available as the variable $\_ENV['\_'] in most cases.
 However it changes value depending on how you call the script. In
 order to make life easy for our programming we decide that the script
 must always be executed by its absolute path. So
-“./myphpshellscript.phpsh” will not work, but
-“/abs/path/to/typo3conf/ext/myext/ myphpshellscript.phpsh” will.
+"./myphpshellscript.phpsh" will not work, but
+"/abs/path/to/typo3conf/ext/myext/ myphpshellscript.phpsh" will.
 
 **Note about FreeBSD:** It has been reported (by Rainer Kuhn, punkt.de
 – thanks) that on FreeBSD the path is not available in $\_ENV['\_']
@@ -74,7 +74,7 @@ file with the framework here::
 - Line 1 will call the PHP binary to parse the script (just like a bash-
   script).
 
-- Line 9 defines “CLI” mode for TYPO3. When this is set browser checks
+- Line 9 defines "CLI" mode for TYPO3. When this is set browser checks
   are disabled and you can initialize a backend user with the name
   corresponding to the module name you set up in the conf.php file. See
   later.So you  **MUST** set the CLI mode, otherwise you will get
@@ -90,14 +90,14 @@ file with the framework here::
   files for backend modules in extensions. (In fact this script must be
   registered as a backend module)
 
-- Line 19 includes the backend “init.php” file.
+- Line 19 includes the backend "init.php" file.
 
 After these lines you have a backend environment set up. The browser
 check was bypassed and a backend user named like $MCONF['name'] was
 initialized. If something failed init.php will exit with an error
-message. You can also execute the script with the “status” command
-(eg. “/abs/path/to/typo3conf/ext/myext/ myphpshellscript.phpsh
-status”) to see which user was initialized, which database found and
+message. You can also execute the script with the "status" command
+(eg. "/abs/path/to/typo3conf/ext/myext/ myphpshellscript.phpsh
+status") to see which user was initialized, which database found and
 which path the script runs from. This indicates the success of the
 initialization.
 
@@ -109,7 +109,7 @@ In the conf.php for the shell script you enter TYPO3\_MOD\_PATH and
 backend as usual.
 
 The $MCONF variable is also set with the module name. This must be
-prefixed “\_CLI\_” and then a unique module name, eg. based on the
+prefixed "\_CLI\_" and then a unique module name, eg. based on the
 extension key. The value of $MCONF['name'] in lowercase will be the
 backend username that is initialized automatically in init.php for
 your sessions. This is hardcoded.
@@ -121,12 +121,12 @@ An example conf.php file looks like this::
       2: $BACK_PATH = '../../../../typo3/';
       3: $MCONF['name'] = '_CLI_userfiio';
 
-The backend user is then named “\_cli\_userfiio”:
+The backend user is then named "\_cli\_userfiio":
 
 |img-88|
 
-**Notice:** You must make sure to enter the path of the “shell script
-module” in the ext\_emconf.php scripts array (key “module”). If you do
+**Notice:** You must make sure to enter the path of the "shell script
+module" in the ext\_emconf.php scripts array (key "module"). If you do
 this, the extension manager will automatically fix the paths in the
 conf.php file when the extension with your script is installed in
 either global / local scopes. This is no different from ordinary
@@ -136,7 +136,7 @@ backend modules which need the same attension!
 Running the script
 """"""""""""""""""
 
-Any script configured like this can be run with the “status” argument
+Any script configured like this can be run with the "status" argument
 and you will see whether the initialization went well::
 
    agentk@rock:~$
@@ -156,12 +156,12 @@ Natural limitations
 Since you are not running the script from a web browser all backend
 operations that work on URLs or browser information will not produce
 correct output. There simply is no URL to get if you ask
-“t3lib\_div::getIndpEnv()” for “TYPO3\_SITE\_URL” or so!
+"t3lib\_div::getIndpEnv()" for "TYPO3\_SITE\_URL" or so!
 
 You cannot expect to save session data for the authenticated backend
 user since there is no session running with cookies either. You should
 also remember that all operations done in the script is done with the
-permissions of the “\_cli\_\*” user that was authenticated. So make
-sure to configure the user correctly. The “\_cli\_” user is not
-allowed to be “admin” for security reasons.
+permissions of the "\_cli\_\*" user that was authenticated. So make
+sure to configure the user correctly. The "\_cli\_" user is not
+allowed to be "admin" for security reasons.
 

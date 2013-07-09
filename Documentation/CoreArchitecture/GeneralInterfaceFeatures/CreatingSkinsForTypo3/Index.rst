@@ -18,17 +18,17 @@ structure:
 
 |img-155|
 
-This screenshot is from the skin extension “skin360” which is an
-example of how skins can be made. The “skin360” extension is therefore
+This screenshot is from the skin extension "skin360" which is an
+example of how skins can be made. The "skin360" extension is therefore
 a good place to start to look if you want to create your own skins.
 
 
 Skinning API
 """"""""""""
 
-In “TYPO3 Core API” you can find a section which documents the `API
+In "TYPO3 Core API" you can find a section which documents the `API
 for TYPO3 skins <#Skinning%20API%7Coutline>`_ . Use this section in
-conjunction with example extensions like “skin360”.
+conjunction with example extensions like "skin360".
 
 
 IMPORTANT: Skinning and copyrights
@@ -41,8 +41,8 @@ effectively rebrand TYPO3!
 
 Rebranding TYPO3 is illegal (by default copyright and trademark laws,
 see `details here <http://typo3.org/1310.0.html>`_ ). Rebranding means
-that you give the TYPO3 CMS "another name", presumably to sell “your
-product” to a customer. So  *never* try to brand TYPO3 as if it was
+that you give the TYPO3 CMS "another name", presumably to sell "your
+product" to a customer. So  *never* try to brand TYPO3 as if it was
 your own product to which you have the copyright. Always make sure
 your custom is aware that they get TYPO3 which is free under the GPL
 license.
@@ -54,12 +54,12 @@ logos do not give the impression that the CMS is something else than
 TYPO3 you can personalize these logos as much as you like. You can
 name them after the company to which you sell the solution so it feels
 personal for them. Or you could mix TYPO3s logo with your companys
-logo, stating something like “My Company proudly uses TYPO3 blablabla”
+logo, stating something like "My Company proudly uses TYPO3 blablabla"
 or whatever.
 
 The main reason why you can change these logos is that the official
 TYPO3 logo and name is included in the copyright notice of the login
-screen and “About Modules” screen. This notice must  *never* be
+screen and "About Modules" screen. This notice must  *never* be
 changed by you and must display "as is". This is what ultimately
 identifies to the user that the underlying CMS is in fact TYPO3, not
 something else.
@@ -85,6 +85,6 @@ the license::
        under certain conditions; type `show c' for details.
    ...
 
-(The GPL license can be found in the file “GPL.txt” inside the TYPO3
+(The GPL license can be found in the file "GPL.txt" inside the TYPO3
 source code)
 

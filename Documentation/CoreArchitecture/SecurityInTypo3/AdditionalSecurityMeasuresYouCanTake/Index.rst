@@ -10,7 +10,7 @@ Additional security measures you can take:
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 - Add a .htaccess file to the typo3/ source code directory. This will
-  “webserver protect” the backend interface. Backend users will have to
+  "webserver protect" the backend interface. Backend users will have to
   type in two passwords: First the general webserver password, then the
   user-specific TYPO3 password.The authenticated web-server user is not
   used by TYPO3 in any way. It just adds another gate in the

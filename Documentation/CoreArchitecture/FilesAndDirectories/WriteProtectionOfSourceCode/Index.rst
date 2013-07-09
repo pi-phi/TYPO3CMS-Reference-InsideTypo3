@@ -39,7 +39,7 @@ On unix-boxes you can use this command::
 
 **Notice:** A typical mistake on UNIX systems regarding the write
 permissions is if you look at the write permission for eg.
-“typo3conf/localconf.php” and see that this file should be writeable.
+"typo3conf/localconf.php" and see that this file should be writeable.
 If TYPO3 tells you that it is not writeable it's most likely because
 you didn't allow PHP to write to the typo3conf/  *directory* as well!
 

@@ -14,7 +14,7 @@ nature of a language pack is simply that it is a directory in
 typo3conf/l10n/ inside of which locallang-xml files are found in
 folders according to the position of their main file.
 
-Scheme: “typo3conf/l10n/[lang]/[extkey]/[dir]+[filename]”
+Scheme: "typo3conf/l10n/[lang]/[extkey]/[dir]+[filename]"
 
 This leaves various possibilities of distribution and cooperation:
 
@@ -60,6 +60,6 @@ support in EM since:
   installing extensions.
 
 - Allows easy sharing of translations made all over the world (thus an
-  answer to the missing “online translation” tool and translations are
+  answer to the missing "online translation" tool and translations are
   made when needed and with understanding of what is translated)
 

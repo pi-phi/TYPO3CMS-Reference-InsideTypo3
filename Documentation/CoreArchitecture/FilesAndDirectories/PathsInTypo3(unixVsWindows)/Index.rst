@@ -15,8 +15,8 @@ symlinking of the backend code (UNIX).
 All paths are using single forward slashes (mydir/myfile.php - right!)
 opposed to backslashes (mydir\\myfile.php - WRONG!).
 
-All absolute paths should begin with either “/” or “x:/”, eg.
-“/mydir/myfile.php” (unix) or “C:/mydir/myfile.php” (windows). Please
+All absolute paths should begin with either "/" or "x:/", eg.
+"/mydir/myfile.php" (unix) or "C:/mydir/myfile.php" (windows). Please
 use the function t3lib\_div::isAbsPath($path) to check absolute paths.
 This function will return true if absolute. There are also a few other
 API functions which are very recommended for security reasons:

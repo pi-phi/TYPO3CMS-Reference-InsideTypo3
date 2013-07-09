@@ -120,7 +120,7 @@ HTML in CSH
 
 Currently "description", "details" and "syntax" fields accept limited
 XHTML content: <strong>, <em>, <b>, <i>. However, don't use important
-markup for the “description” field since it will stripped when shown
+markup for the "description" field since it will stripped when shown
 in TCEforms.
 
 
@@ -160,8 +160,8 @@ The keys in $TCA\_DESCR is by default pointing to database tables, for
 example "pages". However if you wish to use CSH in your modules you
 can use keys name by this syntax::
 
-      _MOD_[module_name] - Placed in the “Backend module” category
-           xMOD_[extension key with tx_ infront] - Placed in the “Other” category
+      _MOD_[module_name] - Placed in the "Backend module" category
+           xMOD_[extension key with tx_ infront] - Placed in the "Other" category
            xEXT_[extension key] - for description of extensions.
            xGLOSSARY_[group] - for glossaries, will be marked up in other CSH.
 
