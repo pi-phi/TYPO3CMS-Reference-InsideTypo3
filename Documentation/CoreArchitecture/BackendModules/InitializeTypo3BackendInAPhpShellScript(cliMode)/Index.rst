@@ -7,6 +7,8 @@
 .. include:: Images.txt
 
 
+.. _initialize-cli-mode:
+
 Initialize TYPO3 backend in a PHP shell script (CLI mode)
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
