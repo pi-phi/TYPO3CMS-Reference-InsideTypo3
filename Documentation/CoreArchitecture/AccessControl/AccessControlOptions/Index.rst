@@ -198,18 +198,18 @@ summarized here:
 - Every page has permissions for owner, group and everybody in these
   five categories:
 
-1 Show: See/Copy page and the pagecontent.
+1 Show: See/Copy page and the page content.
 
-16 Edit pagecontent: Change/Add/Delete/Move pagecontent.
+16 Edit page content: Change/Add/Delete/Move page content.
 
 2 Edit page: Change/Move the page, eg. change title, startdate,
 hidden.
 
-4 Delete page: Delete the page and pagecontent.
+4 Delete page: Delete the page and page content.
 
 8 New pages: Create new pages under the page.
 
-(Definition: "Pagecontent" means all records (except from the
+(Definition: "Page content" means all records (except from the
 "pages"-table) related to that page.)
 
 Page permissions are set and viewed by the module "Access":
