@@ -11,7 +11,7 @@ Strategy
 
 Internationalization (i18n) and localization (l10n) issues are handled
 by the "language" class included by the "template.php" file and
-instantiated as the global variable $LANG in the backend.
+instantiated as the global variable $GLOBALS['LANG'] in the backend.
 
 The strategy of localization in TYPO3 is to translate all the parts of
 the TYPO3 Backend (TBE) interface which are available to everyday

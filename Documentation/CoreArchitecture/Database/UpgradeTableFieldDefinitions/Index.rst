@@ -100,6 +100,6 @@ The upgrade process
 """""""""""""""""""
 
 More information about the process of upgrading TYPO3 can be found in
-the document `"Installing and Upgrading TYPO3"
-<../Sites/typo3/doc_inst_upgr/doc/manual.sxw#Upgrade%7Coutline>`_ .
+the document :ref:`"Installation and Upgrade Guide"
+<t3install:upgrade>` .
 

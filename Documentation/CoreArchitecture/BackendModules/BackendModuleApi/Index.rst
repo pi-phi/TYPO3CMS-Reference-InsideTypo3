@@ -131,7 +131,7 @@ appear like this in the menu:
        t3lib_extMgm::addModule('web','txtempM2','',t3lib_extMgm::extPath($_EXTKEY).'mod2/');
    }
 
-"web" is the name of the main module (the "Web>" module) and
+"web" is the name of the main module (the "Web > " module) and
 "txtempM2" is the sub-module key. In the menu this module could appear
 like this:
 

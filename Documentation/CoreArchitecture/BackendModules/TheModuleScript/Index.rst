@@ -21,10 +21,10 @@ backend modules. An example looks like this::
      29:     // DEFAULT initialization of a module [BEGIN]
      30: unset($MCONF);
      31: require('conf.php');
-     32: require($BACK_PATH.'init.php');
-     33: require($BACK_PATH.'template.php');
-     34: $LANG->includeLLFile('EXT:temp/cm1/locallang.php');
-     36: require_once (PATH_t3lib.'class.t3lib_scbase.php');
+     32: require($BACK_PATH . 'init.php');
+     33: require($BACK_PATH . 'template.php');
+     34: $GLOBALS['LANG']->includeLLFile('EXT:temp/cm1/locallang.php');
+     36: require_once (PATH_t3lib . 'class.t3lib_scbase.php');
      37:     // ....(But no access check here...)
      38:     // DEFAULT initialization of a module [END]
    ...
@@ -34,7 +34,7 @@ backend modules. An example looks like this::
     133:
     134:
     135:
-    136: if (defined('TYPO3_MODE') && $TYPO3_CONF_VARS[TYPO3_MODE]['XCLASS']['ext/temp/cm1/index.php'])    {
+    136: if (defined('TYPO3_MODE') && $TYPO3_CONF_VARS[TYPO3_MODE]['XCLASS']['ext/temp/cm1/index.php']) {
     137:     include_once($TYPO3_CONF_VARS[TYPO3_MODE]['XCLASS']['ext/temp/cm1/index.php']);
     138: }
     139:
@@ -49,10 +49,10 @@ backend modules. An example looks like this::
     148: $SOBE->main();
     149: $SOBE->printContent();
 
-- Lines 30-32 does the basic initialization
+- Lines 30-32 do the basic initialization
 
 - Line 33 includes the backend document template class and language
-  class (provides the $LANG and $TBE\_TEMPLATE objects).
+  class (provides the $GLOBALS['LANG'] and $TBE\_TEMPLATE objects).
 
 - Line 34 includes the main "locallang" file for the script
 
@@ -84,7 +84,7 @@ accordingly. In this case it will exit with a an error message if the
 user is not logged in. ::
 
      // This checks permissions and exits if the users has no permission for entry.
-   $BE_USER->modAccess($MCONF,1);
+   $GLOBALS['BE_USER']->modAccess($MCONF, 1);
 
 
 Checking for "admin" user
@@ -93,7 +93,7 @@ Checking for "admin" user
 In case your backend script requires the "admin" user to be logged in
 it is easy to do a check::
 
-   if (!$BE_USER->isAdmin()) die('No access for you...');
+   if (!$GLOBALS['BE_USER']->isAdmin()) die('No access for you...');
 
 See the `API for the $BE\_USER object
 <#Backend%20User%20Object%7Coutline>`_ for more details.
@@ -105,6 +105,6 @@ More details
 Please refer to the comments inside of the class file
 "t3lib/class.t3lib\_scbase.php" for more details on a basic framework
 for backend modules ("script classes"). If you want to start a new
-backend module you should definitely use the Kicstarter Wizard to do
+backend module you should definitely use the Kickstarter Wizard to do
 so. It will set up all the basics for you.
 

@@ -50,7 +50,7 @@ Access lists are defined in the user groups and includes
    array for the module specifies this) or 2) if the user has the module
    included by the positivelist or 3) is an "admin" user (of
    course).Users must have access to the main module in order to see the
-   sub-modules inside listed in the menu. So to have "Web>List" in the
+   sub-modules inside listed in the menu. So to have "Web > List" in the
    module menu the user must have access to "Web". Please notice that the
    core module "Tools" is defined to be for "admin" users only and thus
    sub-modules to "Tools" will only appear in the menu for "admin" users.
@@ -58,7 +58,7 @@ Access lists are defined in the user groups and includes
    also available in the be\_users records!
 
 #. **Positivelist of tables that are shown in listings (eg. in
-   Web>List).** Notice: This list has the list of tables for editing (see
+   Web > List).** Notice: This list has the list of tables for editing (see
    below) appended. So tables listed for modification need not be
    included in this list as well!
 
@@ -233,9 +233,8 @@ permissions.
 When a user creates new pages in TYPO3 they will by default get the
 creating user as owner. The owner group will be set to the  *first
 listed user group* configured for the users record (if any) (available
-in $BE\_USER->firstMainGroup). These defaults can be `changed through
-Page TSconfig <../Sites/typo3/doc_core_tsconfig/doc/manual.sxw#Page%20
-TSconfig%7Coutline>`_ .
+in $BE\_USER->firstMainGroup). These defaults can be changed through
+:ref:`Page TSconfig <t3tsconfig:pagetsconfig>` .
 
 If you wish to change the default values user/group/everybody it can
 be done by TYPO3\_CONF\_VARS[BE][defaultPermissions] (please read
@@ -248,15 +247,14 @@ User TSconfig
 User TSconfig is a hierarchical configuration structure entered in
 plain text TypoScript. It can be used by all kinds of applications
 inside of TYPO3 to retrieve customized settings for users which
-relates to a certain module or part. The options available is
-described in the `document TSconfig <../Sites/typo3/doc_core_tsconfig/
-doc/manual.sxw#User%20TSconfig%7Coutline>`_ .
+relates to a certain module or part. The options available are
+described in the :ref:`document TSconfig <t3tsconfig:usertsconfig>` .
 
 A good example is to look at the script 'alt\_main.php' in which the
 shortcut frame is displayed in the frameset only if the User TSconfig
 option "options.shortcutFrame" is true::
 
-   if ($BE_USER->getTSConfigVal('options.shortcutFrame'))    {....
+   if ($GLOBALS['BE_USER']->getTSConfigVal('options.shortcutFrame')) {....
 
 Likewise other scripts and modules in TYPO3 is able to acquire a value
 from the User TSconfig field.

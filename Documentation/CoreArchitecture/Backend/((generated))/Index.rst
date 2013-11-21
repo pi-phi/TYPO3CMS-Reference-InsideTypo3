@@ -131,10 +131,10 @@ for the submodules under them. One exception is the "Doc" module which
 they  *don't have to* have any technical relationship with the main
 module. The main module might simply act as a category for the module.
 However for "Frameset modules" it's a little different (see next
-section). Sub-modules may be named "Web>List" or "User>Setup" but we
+section). Sub-modules may be named "Web > List" or "User > Setup" but we
 encourage unambiguous naming of modules so any module can be referred
-to by its own name only, eg. "List module" (Web> **List** ) or
-"Filelist module" (File> **Filelist** ) - it turns out to be much
+to by its own name only, eg. "List module" (Web >  **List** ) or
+"Filelist module" (File >  **Filelist** ) - it turns out to be much
 easier to say in words " *The filelist module* " than " *The File-
 Filelist module* ".
 

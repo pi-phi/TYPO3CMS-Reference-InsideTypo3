@@ -12,15 +12,15 @@ The $TCA\_DESCR array
 
 The global array $TCA\_DESCR is reserved to contain CSH labels. CSH
 labels are loaded as they are needed. Thus the class rendering the
-form will make an API call to the $LANG object to have the CSH labels
-loaded - if any - for the table "pages".
+form will make an API call to the $GLOBALS['LANG'] object to have the
+CSH labels loaded - if any - for the table "pages".
 
 In this process the $TCA\_DESCR array will look like this before the
 API call:
 
 |img-135|
 
-Notice that the key ["pages"]["refs"] has a file reference pointing to
+Notice that the key ['pages']['refs'] has a file reference pointing to
 a locallang file which contains the labels we need. Nothing more.
 These default values found in $TCA\_DESCR is set by API calls in
 t3lib/stddb/tables.php::
@@ -28,11 +28,11 @@ t3lib/stddb/tables.php::
    /**
     * Setting up TCA_DESCR - Context Sensitive Help
     */
-   t3lib_extMgm::addLLrefForTCAdescr('pages','EXT:lang/locallang_csh_pages.php');
-   t3lib_extMgm::addLLrefForTCAdescr('be_users','EXT:lang/locallang_csh_be_users.php');
-   t3lib_extMgm::addLLrefForTCAdescr('be_groups','EXT:lang/locallang_csh_be_groups.php');
-   t3lib_extMgm::addLLrefForTCAdescr('sys_filemounts','EXT:lang/locallang_csh_sysfilem.php');
-   t3lib_extMgm::addLLrefForTCAdescr('_MOD_tools_em','EXT:lang/locallang_csh_em.php');
+   t3lib_extMgm::addLLrefForTCAdescr('pages', 'EXT:lang/locallang_csh_pages.php');
+   t3lib_extMgm::addLLrefForTCAdescr('be_users', 'EXT:lang/locallang_csh_be_users.php');
+   t3lib_extMgm::addLLrefForTCAdescr('be_groups', 'EXT:lang/locallang_csh_be_groups.php');
+   t3lib_extMgm::addLLrefForTCAdescr('sys_filemounts', 'EXT:lang/locallang_csh_sysfilem.php');
+   t3lib_extMgm::addLLrefForTCAdescr('_MOD_tools_em', 'EXT:lang/locallang_csh_em.php');
 
 The red line above is the line setting the file for the "pages" table.
 Notice that other extensions might supply additional files and add
@@ -169,8 +169,8 @@ Normally modules will have their name in the $MCONF variable. That
 would allow you to load the available labels for your module by this
 API call::
 
-   $key = '_MOD_'.$MCONF['name'];
-   $LANG->loadSingleTableDescription($key);
+   $key = '_MOD_' . $MCONF['name'];
+   $GLOBALS['LANG']->loadSingleTableDescription($key);
 
 ... and you would now have your labels loaded in
 $TCA\_DESCR[$key]['columns'].

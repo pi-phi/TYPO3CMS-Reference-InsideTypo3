@@ -55,7 +55,7 @@ We are committed to keeping this document up-to-date. We also want
 this document and related documents to contain enough information for
 you to develop with TYPO3 effectively. But guess what - in any case
 the source  *is* updated before  *this* document is and therefore the
-*ultimate* source of both up-to-dateinformation and  *more*
+*ultimate* source of both up-to-date information and  *more*
 information is peeking into the source scripts! And for the source
 scripts we are also trying to keep them well documented.
 
@@ -63,8 +63,8 @@ So generally the source code is the final authority, the final place
 to look for features and get a precise picture of function arguments
 etc. The documentation inside the source scripts will be short and
 precise, no examples, not much explanation. But enough for people
-knowing what to look for. This document - an other documents like "
-`TYPO3 Core API <../Sites/typo3/doc_core_api/doc/manual.sxw>`_ " -
+knowing what to look for. This document - and other documents like "
+:ref:`TYPO3 Core API <t3api:start>` " -
 should provide the greater picture explanations for use.
 
 If you find that sections in this document are missing something,

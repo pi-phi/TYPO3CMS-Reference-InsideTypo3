@@ -10,7 +10,7 @@
 Browsing $TYPO3\_CONF\_VARS values
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-In the module Tools>Configuration (extension key: lowlevel), you can
+In the module Tools > Configuration (extension key: lowlevel), you can
 also browse the $TYPO3\_CONF\_VARS array and its values:
 
 |img-31|

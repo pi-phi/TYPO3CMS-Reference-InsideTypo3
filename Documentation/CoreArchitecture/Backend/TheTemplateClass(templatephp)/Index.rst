@@ -36,7 +36,7 @@ template.php does this:
   management of localized labels in the backend. It also contains an
   instance of the character set conversion class, "t3lib\_cs".
 
-- Creates the global variables $TBE\_TEMPLATE and $LANG as instances of
+- Creates the global variables $TBE\_TEMPLATE and $GLOBALS['LANG'] as instances of
   the classes "template" and "language" respectively.
 
 "template.php" requires init.php to have been included on beforehand.
@@ -82,7 +82,7 @@ Variables
 .. container:: table-row
 
    Global variable
-         $LANG
+         $GLOBALS['LANG']
 
    Defined in
          template.php
@@ -92,7 +92,7 @@ Variables
          various parts in the backend.
 
          It also contains an instance of the "t3lib\_cs" class in
-         $LANG->csConvObj
+         $GLOBALS['LANG']->csConvObj
 
    Avail. in FE
 
@@ -182,7 +182,7 @@ Classes
 
    Description
          Localization class which returns the correct localized labels for
-         various parts in the backend. Instantiated as $LANG
+         various parts in the backend. Instantiated as $GLOBALS['LANG']
 
    Avail. in FE
          -

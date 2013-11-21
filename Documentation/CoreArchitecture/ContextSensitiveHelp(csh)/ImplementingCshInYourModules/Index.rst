@@ -30,9 +30,9 @@ initialization of your module:
    the init() function of your script class::
 
                          // Descriptions:
-                      $this->descrTable = "_MOD_".$this->MCONF["name"];
-                      if ($BE_USER->uc["edit_showFieldHelp"])      {
-                              $LANG->loadSingleTableDescription($this->descrTable);
+                      $this->descrTable = '_MOD_' . $this->MCONF['name'];
+                      if ($GLOBALS['BE_USER']->uc['edit_showFieldHelp']) {
+                              $GLOBALS['LANG']->loadSingleTableDescription($this->descrTable);
                       }
 
    It's assumed that $this->MCONF equals the global $MCONF var that
@@ -59,20 +59,20 @@ Example 1
 The most simple and straight forward way to include the icon/helptext
 would be something like this::
 
-   $HTMLcode.=
-           t3lib_BEfunc::helpTextIcon($this->descrTable,"quickEdit_selElement",$GLOBALS["BACK_PATH"]).
-           t3lib_BEfunc::helpText($this->descrTable,"quickEdit_selElement",$GLOBALS["BACK_PATH"]).
-           "<br/>";
+   $HTMLcode .=
+           t3lib_BEfunc::helpTextIcon($this->descrTable, 'quickEdit_selElement', $GLOBALS['BACK_PATH']) .
+           t3lib_BEfunc::helpText($this->descrTable, 'quickEdit_selElement', $GLOBALS['BACK_PATH']) .
+           '<br/>';
 
 These lines assumes that
 
 - $this->descrTable points to the "tablename" (in this case the string
-  "\_MOD\_".$MCONF["name"])
+  "\_MOD\_" . $MCONF['name'])
 
 - "quickEdit\_selElement" is a "fieldname" defined in the locallang\_csh
   file
 
-- $GLOBALS["BACK\_PATH"] is correctly pointing back to the
+- $GLOBALS['BACK\_PATH'] is correctly pointing back to the
   TYPO3\_mainDir (that is necessary for modules outside of the main
   directory)
 
@@ -83,8 +83,8 @@ The locallang\_csh file for this example would look like this::
    * Default  TCA_DESCR for "_MOD_web_layout"
    */
 
-   $LOCAL_LANG = Array (
-       'default' => Array (
+   $LOCAL_LANG = array (
+       'default' => array (
            'quickEdit.description' => 'The Quick Editor gives you direct . . . ',
            'quickEdit.details' => 'The Quick Editor is designed to cut . . .',
            'quickEdit_selElement.description' => 'This is an overview of th. . . ',
@@ -95,7 +95,7 @@ The locallang\_csh file for this example would look like this::
 
 (Location is "sysext/cms/locallang\_csh\_weblayout.php" and in
 ext\_tables.php for the "cms" extension you will find this line to
-associate the locallang file with CSH for the Web>Page module: t3lib\_
+associate the locallang file with CSH for the Web > Page module: t3lib\_
 extMgm::addLLrefForTCAdescr('\_MOD\_web\_layout','EXT:cms/locallang\_c
 sh\_weblayout.php'); )
 
@@ -111,17 +111,16 @@ internally in the script class of the module for handling the help
 texts. This is an example from the Extension Manager module
 (mod/tools/em/index.php)::
 
-   function helpCol($key)    {
-       global $BE_USER;
-       if ($BE_USER->uc["edit_showFieldHelp"])    {
-           $hT = trim(t3lib_BEfunc::helpText($this->descrTable,"emconf_".$key,$this->doc->backPath));
-           return '<td>'.
-               ($hT?$hT:
+   function helpCol($key) {
+       if ($GLOBALS['BE_USER']->uc['edit_showFieldHelp']) {
+           $hT = trim(t3lib_BEfunc::helpText($this->descrTable, 'emconf_' . $key, $this->doc->backPath));
+           return '<td>' .
+               ($hT ? $hT:
                    t3lib_BEfunc::helpTextIcon(
                        $this->descrTable,
-                       "emconf_".$key,
+                       'emconf_' . $key,
                        $this->doc->backPath
-                   )).
+                   )) .
                '</td>';
        }
    }
@@ -143,6 +142,6 @@ help-icon or a table with both icon and description text depending on
 the current users configuration. In addition it will automatically
 load the description files for the $table parameter given. ::
 
-   $HTMLcode.=
-   t3lib_BEfunc::cshItem($tableIdent,'quickEdit',$BACK_PATH);
+   $HTMLcode .=
+   t3lib_BEfunc::cshItem($tableIdent, 'quickEdit', $BACK_PATH);
 

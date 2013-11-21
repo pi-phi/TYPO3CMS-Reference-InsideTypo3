@@ -38,7 +38,7 @@ The "Function Menu" is the selector box menu you will often find in
 the upper right corner of backend modules. By that selector you can
 select sub-functionality within that module. Often this functionality
 is hardcoded into the backend module. In other cases (like the core
-modules `Web>Info <#Info%20module%7Coutline>`_ and `Web>Functions
+modules `Web > Info <#Info%20module%7Coutline>`_ and `Web > Functions
 <#Functions%20module%7Coutline>`_ ) there is an API which allows you
 to add additional items to the function menu and specify which PHP-
 class to call for rendering the content of that item.
@@ -50,7 +50,7 @@ functionalities without introducing a whole new backend module which
 shows up in the menu. Their properties are:
 
 - **Discrete** Adds functionality discretely or in certain contexts
-  (like in the Web>Template module you would add functionality related
+  (like in the Web > Template module you would add functionality related
   to TypoScript Templates).
 
 - **Simple** Inherits access control and default configuration from main

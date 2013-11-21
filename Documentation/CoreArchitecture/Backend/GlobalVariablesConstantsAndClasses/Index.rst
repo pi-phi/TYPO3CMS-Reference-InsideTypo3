@@ -226,9 +226,9 @@ get the value (if it is supported by that function). You can rely on
 that function will deliver a consistent value independently of the
 server OS and webserver software.
 
-You should refer to the `TYPO3 Coding Guidelines
-<../Sites/typo3/doc_core_cgl/doc/manual.sxw>`_ or `TYPO3 Core API
-<#High%20priority%20functions%20(CGL%20requirements)%7Coutline>`_ for
+You should refer to the :ref:`TYPO3 Coding Guidelines
+<t3cgl:start>` or :ref:`TYPO3 Core API
+<t3api:high-priority-functions>` for
 more information about this or go directly to the source of
 class.t3lib\_div.php.
 

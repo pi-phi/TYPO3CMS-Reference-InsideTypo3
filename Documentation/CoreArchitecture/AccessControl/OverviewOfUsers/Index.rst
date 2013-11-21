@@ -87,7 +87,7 @@ will apply to this user for each page in his DB mounts.
 **"Non-mounted readable pages"** (2) could potentially be a security
 problem. Those pages are not mounted as DB mounts and thus not
 visible/clickable in the page tree. But guessing an id of one of those
-pages and sending that id to the Web>List module would list records on
+pages and sending that id to the Web > List module would list records on
 these pages. Most likely you don't want that. Further the danger is
 even more serious if you have Frontend Edit enabled in the CMS
 frontend. However  *there is no problem* unless you change a default

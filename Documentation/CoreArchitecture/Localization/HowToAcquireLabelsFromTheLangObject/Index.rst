@@ -6,8 +6,8 @@
 .. include:: ../../../Includes.txt
 
 
-How to acquire labels from the $LANG object
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+How to acquire labels from the $GLOBALS['LANG'] object
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 The previous section described the storage structure for translations:
 "locallang" files and $LOCAL\_LANG arrays. But how are these values
@@ -15,22 +15,22 @@ practically used?
 
 Basically there are two approaches:
 
-- Call $LANG->getLL(" *label\_key* ")
+- Call $GLOBALS['LANG']->getLL(' *label\_key* ')
 
-- Call $LANG->sL("LLL:[file-reference of locallang file]:[key-name]")
+- Call $GLOBALS['LANG']->sL('LLL:[file-reference of locallang file]:[key-name]')
 
 These are described below.
 
 
-$LANG->getLL()
-""""""""""""""
+$GLOBALS['LANG']->getLL()
+"""""""""""""""""""""""""
 
 This approach will simply return a label from the globally defined
 $LOCAL\_LANG array. So prior to calling this function you must have
 included a locallang file (and possibly sub-file) in the global scope
 of the script.
 
-There is a sister function, $LANG->getLLL(" *label\_key* ",
+There is a sister function, $GLOBALS['LANG']->getLLL(' *label\_key* ',
 $LOCAL\_LANG), which allows you to do the same thing, but pass along
 the $LOCAL\_LANG array to use (instead of the global array).
 
@@ -38,12 +38,12 @@ Requires a locallang file to be manually included prior to use. See
 below.
 
 
-$LANG->sL()
-"""""""""""
+$GLOBALS['LANG']->sL()
+""""""""""""""""""""""
 
 This approach lets you get a label by a reference to the file where it
-exists and its label key: $LANG->sL("LLL:[file-reference of locallang
-file]:[key-name]"). That mode is initiated by a triple L (LLL:) prefix
+exists and its label key: $GLOBALS['LANG']->sL('LLL:[file-reference of locallang
+file]:[key-name]'). That mode is initiated by a triple L (LLL:) prefix
 of the string.
 
 The file-reference is a "locallang"-file in either PHP or XML format.
@@ -58,7 +58,7 @@ concept is  **depricated** since it's impossible to maintain
 efficiently.  *Always* use the "LLL:" references to proper locallang
 files. (See discussion of "language-splitted" syntax above).
 
-$LANG->sL() requires no manual inclusion of a locallang file since
+$GLOBALS['LANG']->sL() requires no manual inclusion of a locallang file since
 that is done automatically. Typically used in table and field name
 labels in $TCA or in modules where a single value from the core
 locallang file is needed.
@@ -70,14 +70,14 @@ in addition)
 Including locallang files in modules
 """"""""""""""""""""""""""""""""""""
 
-If you are using $LANG->getLL() for fetching labels in your modules
+If you are using $GLOBALS['LANG']->getLL() for fetching labels in your modules
 (this is recommended) then you must make sure to include the locallang
 file with the labels during the initialization of your module. However
 you should not just include the file - rather use the API-function
-$LANG->includeLLFile() designed for that. There are three reasons for
+$GLOBALS['LANG']->includeLLFile() designed for that. There are three reasons for
 this:
 
-- If the locallang.php file is splitted into a main- and sub-file that
+- If the locallang.php file is split into a main- and sub-file that
   is automatically handled by that function.
 
 - If any 'XLLFile' is configured to override the values in the default
@@ -92,13 +92,13 @@ this:
 Example from the "setup" module (red line includes locallang for that
 module)::
 
-   require ($BACK_PATH.'init.php');
-   require ($BACK_PATH.'template.php');
-   $LANG->includeLLFile('EXT:setup/mod/locallang.php');
+   require ($BACK_PATH . 'init.php');
+   require ($BACK_PATH . 'template.php');
+   $GLOBALS['LANG']->includeLLFile('EXT:setup/mod/locallang.php');
 
 This function call will load the $LOCAL\_LANG array from
 'EXT:setup/mod/locallang.php' into the global memory space and thus
-make it available to $LANG->getLL(). If 'EXT:setup/mod/locallang.php'
+make it available to $GLOBALS['LANG']->getLL(). If 'EXT:setup/mod/locallang.php'
 does not exist but 'EXT:setup/mod/locallang.xml' does, then the latter
 is parsed, loaded and everything is the same for TYPO3. Although you
 should probably use the correct file extension in the file reference
@@ -109,5 +109,5 @@ If you wish to not load the $LOCAL\_LANG array into global space, but
 rather have it returned in a variable, just set the second optional
 argument true like this:
 
-$myLocalLang = $LANG->includeLLFile('EXT:setup/mod/locallang.xml', 1);
+$myLocalLang = $GLOBALS['LANG']->includeLLFile('EXT:setup/mod/locallang.xml', 1);
 

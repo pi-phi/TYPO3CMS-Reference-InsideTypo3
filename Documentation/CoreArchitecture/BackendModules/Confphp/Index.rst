@@ -95,10 +95,10 @@ scheme:
    Examples
          ::
 
-            $MLANG["default"]["tabs_images"]["tab"] =
-                    "moduleicon.gif";
-            $MLANG["default"]["ll_ref"] =
-                    "LLL:EXT:temp/mod1/locallang_mod.php";
+            $MLANG['default']['tabs_images']['tab'] =
+                    'moduleicon.gif';
+            $MLANG['default']['ll_ref'] =
+                    'LLL:EXT:temp/mod1/locallang_mod.php';
 
 
 .. container:: table-row
@@ -122,8 +122,8 @@ scheme:
             $MCONF['access'] = 'user,group';
 
               // More common for extension backend modules:
-            $MCONF["access"] = "user,group";
-            $MCONF["script"] = "index.php";
+            $MCONF['access'] = 'user,group';
+            $MCONF['script'] = 'index.php';
 
 
 .. ###### END~OF~TABLE ######
@@ -155,7 +155,7 @@ includes:
 
 - In the "ext\_emconf.php" file of the extension you need to add the
   directory of the module to the list of backend modules configured in
-  the key $EM\_CONF[ *extension-key* ]["module"] - otherwise the EM will
+  the key $EM\_CONF[ *extension-key* ]['module'] - otherwise the EM will
   not know that there is a "conf.php" file to modify!
 
 An example would look like this::
@@ -164,12 +164,12 @@ An example would look like this::
        // DO NOT REMOVE OR CHANGE THESE 3 LINES:
    define('TYPO3_MOD_PATH', '../typo3conf/ext/temp/mod2/');
    $BACK_PATH='../../../../typo3/';
-   $MCONF["name"]="web_txtempM2";
+   $MCONF['name'] = 'web_txtempM2';
 
-   $MCONF["access"]="user,group";
-   $MCONF["script"]="index.php";
-   $MLANG["default"]["tabs_images"]["tab"] = "moduleicon.gif";
-   $MLANG["default"]["ll_ref"]="LLL:EXT:temp/mod2/locallang_mod.php";
+   $MCONF['access'] = 'user,group';
+   $MCONF['script'] = 'index.php';
+   $MLANG['default']['tabs_images']['tab'] = 'moduleicon.gif';
+   $MLANG['default']['ll_ref"] = 'LLL:EXT:temp/mod2/locallang_mod.php';
    ?>
 
 
@@ -231,21 +231,21 @@ description for a Backend Module. Originally the $MLANG variable
 defined values for all languages inside the conf.php file. This
 (obsolete) codelisting shows it::
 
-   $MLANG["default"]["labels"]["tablabel"] = "Advanced functions";
-   $MLANG["default"]["tabs"]["tab"] = "Func";
-   $MLANG["default"]["tabs_images"]["tab"] = "func.gif";
+   $MLANG['default']['labels']['tablabel'] = 'Advanced functions';
+   $MLANG['default']['tabs']['tab'] = 'Func';
+   $MLANG['default']['tabs_images']['tab'] = 'func.gif';
 
-   $MLANG["dk"]["labels"]["tablabel"] = "Avancerede funktioner";
-   $MLANG["dk"]["tabs"]["tab"] = "Funk.";
+   $MLANG['dk']['labels']['tablabel'] = 'Avancerede funktioner';
+   $MLANG['dk']['tabs']['tab'] = 'Funk.';
 
-   $MLANG["de"]["labels"]["tablabel"] = "Erweiterte Funktionen";
-   $MLANG["de"]["tabs"]["tab"] = "Funk.";
+   $MLANG['de']['labels']['tablabel'] = 'Erweiterte Funktionen';
+   $MLANG['de']['tabs']['tab'] = 'Funk.';
 
-   $MLANG["no"]["labels"]["tablabel"] = "Avanserte funksjoner";
-   $MLANG["no"]["tabs"]["tab"] = "Funk.";
+   $MLANG['no']['labels']['tablabel'] = 'Avanserte funksjoner';
+   $MLANG['no']['tabs']['tab'] = 'Funk.';
 
-   $MLANG["it"]["labels"]["tablabel"] = "Funzioni avanzate";
-   $MLANG["it"]["tabs"]["tab"] = "Funzione";
+   $MLANG['it']['labels']['tablabel'] = 'Funzioni avanzate';
+   $MLANG['it']['tabs']['tab'] = 'Funzione';
    ...
 
    (OBSOLETE!)
@@ -330,20 +330,20 @@ $MCONF
          **Examples (Backend Modules):** ::
 
               // Main module (from extension)
-            $MCONF["name"]="txtempM1";
+            $MCONF['name'] = 'txtempM1';
 
               // Submodule of "Web" main module:
-            $MCONF["name"]="web_txtempM2";
+            $MCONF['name'] = 'web_txtempM2';
 
-              // File>Filelist module:
-            $MCONF['name']='file_list';
+              // File > Filelist module:
+            $MCONF['name'] = 'file_list';
 
          **Example (Stand-alone scripts):** ::
 
               // Setting pseudo module name
-            $this->MCONF['name']='xMOD_alt_clickmenu.php';
+            $this->MCONF['name'] = 'xMOD_alt_clickmenu.php';
               // Setting pseudo module name for CSM item
-            $MCONF["name"]="xMOD_tx_temp_cm1";
+            $MCONF['name'] = 'xMOD_tx_temp_cm1';
 
 
 .. container:: table-row
@@ -439,7 +439,7 @@ $MCONF
 
          **Example (From "Web" main module):** ::
 
-            $MCONF['navFrameScript']='../../alt_db_navframe.php';
+            $MCONF['navFrameScript'] = '../../alt_db_navframe.php';
 
 
 .. container:: table-row
@@ -487,7 +487,7 @@ including "init.php". The script "typo3/install/index.php" is an
 example of this::
 
    define('TYPO3_MOD_PATH', 'install/');
-   $BACK_PATH='../';
+   $BACK_PATH = '../';
    ...
    require('../init.php');
 
@@ -499,7 +499,7 @@ this::
 
    unset($MCONF);
    require('conf.php');
-   require($BACK_PATH.'init.php');
+   require($BACK_PATH . 'init.php');
    ...
 
 The file "conf.php" looks like this::

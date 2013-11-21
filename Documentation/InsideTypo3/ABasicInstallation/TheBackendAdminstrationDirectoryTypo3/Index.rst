@@ -27,6 +27,6 @@ words: The "typo3conf/" folder of a TYPO3 installation contains
 *local, unique files* for the website while the "typo3/" folder (along
 with others) contains  *general source code* that could have been
 shared between all installations on a server. Well, read more about
-this in the `Installing and Upgrading <../Sites/typo3/doc_inst_upgr/do
-c/manual.sxw#Verbose%20Install%7Coutline>`_ document.
+this in the :ref:`Installation and Upgrade Guide
+<t3install:in-depth-installation>` .
 

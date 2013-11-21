@@ -16,7 +16,7 @@ registers a reference to the element(s) (file or database record) put
 on the clipboard. The clipboard is saved in the session data and
 normally lasts for the login session.
 
-The clipboard content can be seen in the Web>List module if you enable
+The clipboard content can be seen in the Web > List module if you enable
 "Show clipboard":
 
 |img-147|
@@ -32,7 +32,7 @@ The clipboard has multiple "pads", a "Normal" pad an a series of
 
 - The numeric pads can contain multiple elements, even mixed between
   database elements and files/folders. Registering elements to a numeric
-  pad is done from the Web>List or File>Filelist modules when they are
+  pad is done from the Web > List or File > Filelist modules when they are
   in the "Extended view" mode and a numeric pad is enabled. "Copy" or
   "Cut" mode is toggled for the whole selection by a button on the
   clipboard.The "Numeric pads" are used for advanced needs where
@@ -63,11 +63,11 @@ the context you might also have "Paste into" and "Paste after".
 In the screenshot above you can see the clipboard related options from
 the CSM of a page in the page tree.
 
-Below you can see how the File>Filelist module looks when a file is
+Below you can see how the File > Filelist module looks when a file is
 selected on the clipboard. First of all you will get a visual response
 from the "copy" icon if the current element is the one already
 selected. You can deselect by selecting "Copy" again. Also you will
-see that the File>Filelist module (as well as the Web>List module)
+see that the File > Filelist module (as well as the Web > List module)
 provides copy/cut/paste icons directly in the list. Finally, notice
 the clipboard which is opened in the bottom of the list. It shows the
 selected element and which mode ("Copy" or "Cut") it is selected in.
@@ -81,7 +81,7 @@ The numerical pads
 """"""""""""""""""
 
 To select elements to the numeric pads you have to use the
-File>Filelist or Web>List modules, enable the clipboard and select one
+File > Filelist or Web > List modules, enable the clipboard and select one
 of the numeric pads. In the file or record lists you can now tick off
 which elements to select and click the "Select" icon to move the
 selection to the clipboard:
@@ -99,7 +99,7 @@ Notice that in this case three files are also on the same pad. This is
 allowed but obviously they will not be possible to paste where
 database records can be pasted - an vice versa.
 
-In the File>Filelist module you will see that the files are the active
+In the File > Filelist module you will see that the files are the active
 elements if you go there:
 
 |img-152|

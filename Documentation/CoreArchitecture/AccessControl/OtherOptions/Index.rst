@@ -70,7 +70,7 @@ Backend Groups
   discussed earlier - are enabled.
 
 - **Hide in lists** This flag will prevent the group from appearing in
-  listings in TYPO3. This includes modules like Web>Access and the Task
+  listings in TYPO3. This includes modules like Web > Access and the Task
   Center (listing groups for messages, todos etc.)
 
 - **Sub Groups** Assigns sub-groups to this group. Sub-groups are

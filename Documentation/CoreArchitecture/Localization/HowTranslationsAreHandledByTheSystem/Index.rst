@@ -55,6 +55,5 @@ of the backend interface:
   "typo3conf/l10n/[language key]/" is called the "language pack".
 
 For more detailed information about Frontend localization in TYPO3,
-please refer to the document "Frontend Localization Guide"
-(doc\_l10nguide).
+please refer to the document "Frontend Localization Guide".
 

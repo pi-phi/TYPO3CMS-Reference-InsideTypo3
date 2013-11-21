@@ -40,8 +40,8 @@ right. ::
 This would disable the "Show" and "Edit" items in the CSM when showed
 in the page tree.
 
-There are `more options described in the document "TSconfig" <../Sites
-/typo3/doc_core_tsconfig/doc/manual.sxw#-%3EOPTIONS%7Coutline>`_ .
+There are :ref:`more options described in the document "TSconfig"
+<t3tsconfig:useroptions>` .
 
 
 Technical details

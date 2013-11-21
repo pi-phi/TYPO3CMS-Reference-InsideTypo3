@@ -96,10 +96,9 @@ Also create the directories::
 
 Notice that safe\_mode and other security restrictions might prevent
 PHP from working on files outside the document root and thus prevent
-absolute filemounts from working! See the "Installing and Upgrading
-TYPO3" document for more details on `how to run TYPO3 on safe\_mode /
-open\_basedir <../Sites/typo3/doc_inst_upgr/doc/manual.sxw#safe_mode%2
-0and%20open_basedir%7Coutline>`_ environments.
+absolute filemounts from working! See the "Installation and Upgrade
+Guide" for more details on :ref:`how to configure PHP <t3install:php>`
+environments.
 
 
 Home directories

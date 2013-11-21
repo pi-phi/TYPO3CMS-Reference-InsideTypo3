@@ -10,7 +10,7 @@
 Filelist module
 ^^^^^^^^^^^^^^^
 
-The File>Filelist module is the interface to the servers file system
+The File > Filelist module is the interface to the servers file system
 through TYPO3. It's a kind of webbased FTP client offering the user to
 upload files, create new files and folders, rename them and delete
 them. You can also copy / paste files and folders. This is all done by

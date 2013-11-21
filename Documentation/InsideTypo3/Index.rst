@@ -9,7 +9,7 @@
 Inside TYPO3
 ============
 
-Extension Key: doc\_core\_inside
+Previous Key: doc_core_inside
 
 Language: en
 

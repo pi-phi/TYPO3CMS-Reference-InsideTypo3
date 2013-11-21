@@ -175,7 +175,7 @@ versioning:
 
   - Read permissions for new page versions of "branch" type is observed in
     eg. Web > List module. This is due to the fact that the real ID of a
-    "branch" type page is what the backend uses in the Web>List module
+    "branch" type page is what the backend uses in the Web > List module
     while for "page" and "Element" type versions the ID of the live record
     is used in which case the live records display-permissions is what
     gets evaluated.

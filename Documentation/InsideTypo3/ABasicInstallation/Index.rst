@@ -14,9 +14,8 @@ totally trimmed down installation of TYPO3 with  *only* the core -
 then we can see what is actually left...
 
 First of all the general introduction to the source code file
-structure is found in the " `Installing and Upgrading
-<../Sites/typo3/doc_inst_upgr/doc/manual.sxw>`_ " document. So I'll
-not be going into details on that here.
+structure is found in the " :ref:`Installation and Upgrade Guide
+<t3install:start>` ". So I'll not be going into details on that here.
 
 For the coming sections in this document I have made a directory
 "coreinstall" on the same level as an installation of the source code.
