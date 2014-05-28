@@ -5,4 +5,7 @@ conf.py:
   copyright: 2000-2013
   version: 4.2.0
   release: 4.2.0
+  html_theme_options:
+    github_repository: TYPO3-Documentation/TYPO3CMS-Reference-InsideTypo3
+    github_branch: latest
 ...
