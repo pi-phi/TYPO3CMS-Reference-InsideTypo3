@@ -1,4 +1,4 @@
-﻿.. |img-3|      image:: ../../../Images/manual_html_m1db4e20.png
+﻿.. |img-3|      image:: ../../../Images/TYPO3_CMS_Structure.png
 .. :height: 712
 .. :width: 669
 .. :align: left

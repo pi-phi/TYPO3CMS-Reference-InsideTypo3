@@ -1,4 +1,4 @@
-﻿.. |img-4|      image:: ../../../Images/manual_html_m2c4a63c8.png
+﻿.. |img-4|      image:: ../../../Images/Backend_Browser.png
 .. :height: 127
 .. :width: 482
 .. :align: left

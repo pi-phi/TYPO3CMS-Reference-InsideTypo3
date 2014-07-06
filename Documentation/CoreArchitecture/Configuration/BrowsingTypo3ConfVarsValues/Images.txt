@@ -1,4 +1,4 @@
-﻿.. |img-31|     image:: ../../../Images/manual_html_m51aec099.png
+﻿.. |img-31|     image:: ../../../Images/typo3_conf_vars.png
 .. :height: 539
 .. :width: 466
 .. :align: left

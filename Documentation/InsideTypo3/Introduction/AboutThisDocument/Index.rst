@@ -73,7 +73,7 @@ text which could serve as the supplement you want to have added. You
 can also use the annotation feature in the online version at
 TYPO3.org.
 
-**Notice:** TYPO3 version 4 bears a new visual interface (skin) that
+**Notice:** New TYPO3 versions bear a new visual interface (skin) that
 is not reflected in the screenshots of this document. However, this
-does not have any impact on the content itself.
+does not have impact on the content itself.
 

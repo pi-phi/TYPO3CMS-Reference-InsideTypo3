@@ -1,4 +1,4 @@
-﻿.. |img-11|     image:: ../../../Images/manual_html_m7d4e91ce.png
+﻿.. |img-11|     image:: ../../../Images/EM_shyExtension.png
 .. :height: 331
 .. :width: 669
 .. :align: left

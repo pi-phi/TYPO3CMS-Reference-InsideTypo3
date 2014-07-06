@@ -27,9 +27,13 @@ Lets create a localconf.php file::
    $typo_db_host = 'localhost';
    ?>
 
+Without the correct MySQL username and password we would get this error:
+
+|img-5a|
+
 The result will be this:
 
-|img-5|
+|img-5b|
 
 So we are connected to the server (username and password accepted) but
 we have not yet defined a database. Lets go create a blank one!

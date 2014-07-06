@@ -1,25 +1,25 @@
-﻿.. |img-32|     image:: ../../../Images/manual_html_7394381d.png
+﻿.. |img-32|     image:: ../../../Images/be_user.png
 .. :height: 351
 .. :width: 432
 .. :align: left
 .. :border: 0
 .. :name: Graphic44
 
-.. |img-33|     image:: ../../../Images/manual_html_6cfe1391.png
+.. |img-33|     image:: ../../../Images/be_groups.png
 .. :height: 172
 .. :width: 426
 .. :align: left
 .. :border: 0
 .. :name: Graphic43
 
-.. |img-34|     image:: ../../../Images/manual_html_1b450dc4.png
+.. |img-34|     image:: ../../../Images/be_user_admin.png
 .. :height: 177
 .. :width: 188
 .. :align: left
 .. :border: 0
 .. :name: Graphic42
 
-.. |img-35|     image:: ../../../Images/manual_html_50506b00.png
+.. |img-35|     image:: ../../../Images/listModule-be_users.png
 .. :height: 202
 .. :width: 669
 .. :align: left

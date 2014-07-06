@@ -1,4 +1,11 @@
-﻿.. |img-5|      image:: ../../../Images/manual_html_3c1323c7.png
+﻿.. |img-5a|      image:: ../../../Images/Cantconnecttodb.png
+.. :height: 127
+.. :width: 297
+.. :align: left
+.. :border: 0
+.. :name: Graphic7
+
+.. |img-5b|      image:: ../../../Images/Nodbselected.png
 .. :height: 127
 .. :width: 297
 .. :align: left

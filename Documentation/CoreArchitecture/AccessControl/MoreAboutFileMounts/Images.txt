@@ -1,18 +1,18 @@
-﻿.. |img-50|     image:: ../../../Images/manual_html_m28fed359.png
+﻿.. |img-50|     image:: ../../../Images/OverviewFilemounts.png
 .. :height: 289
 .. :width: 398
 .. :align: left
 .. :border: 0
 .. :name: Graphic59
 
-.. |img-51|     image:: ../../../Images/manual_html_m296d0994.png
+.. |img-51|     image:: ../../../Images/EditFilemount.png
 .. :height: 272
 .. :width: 395
 .. :align: left
 .. :border: 0
 .. :name: Graphic57
 
-.. |img-52|     image:: ../../../Images/manual_html_31db32db.png
+.. |img-52|     image:: ../../../Images/EditAbsFilemount.png
 .. :height: 288
 .. :width: 427
 .. :align: left

@@ -16,7 +16,7 @@ So lets sum up what we have now:
 File structure
 """"""""""""""
 
-These are themain directories of interest:
+These are the main directories of interest:
 
 .. ### BEGIN~OF~TABLE ###
 
