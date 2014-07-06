@@ -19,5 +19,4 @@ Files and Directories
    PathsInTypo3(unixVsWindows)/Index
    FilesystemPermissions/Index
    WriteProtectionOfSourceCode/Index
-   ChangingTheDefaultTypo3Directory/Index
 

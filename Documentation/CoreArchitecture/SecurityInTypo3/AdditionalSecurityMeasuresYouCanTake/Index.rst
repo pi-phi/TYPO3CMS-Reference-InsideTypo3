@@ -30,10 +30,6 @@ Additional security measures you can take:
   users are logging in only from certain URL's - maybe some secret
   admin-url you make?)
 
-- `Change name of the "typo3/" backend directory <#Changing%20the%20defa
-  ult%20%E2%80%9Ctypo3/%E2%80%9D%20directory%7Coutline>`_ (makes it
-  harder to guess the administration URL).
-
 - Set the TYPO3\_CONF\_VARS[BE][warning\_mode] and
   TYPO3\_CONF\_VARS[BE][warning\_email\_addr] - that will inform you of
   logins and failed attempts in general.
