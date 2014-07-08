@@ -24,7 +24,7 @@ Localization
    DistributionOfAndContributionToLanguagePacks/Index
    Locallang-xml(llxml)Files/Index
    LocallangphpFiles(deprecated)/Index
-   Language-splittedSyntax(deprecated)/Index
+   Language-splitSyntax(deprecated)/Index
    HowToAcquireLabelsFromTheLangObject/Index
    OverridingLocalLangValues/Index
 
