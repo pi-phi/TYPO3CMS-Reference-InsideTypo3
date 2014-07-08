@@ -98,7 +98,7 @@ scheme:
             $MLANG['default']['tabs_images']['tab'] =
                     'moduleicon.gif';
             $MLANG['default']['ll_ref'] =
-                    'LLL:EXT:temp/mod1/locallang_mod.php';
+                    'LLL:EXT:temp/mod1/locallang_mod.xml';
 
 
 .. container:: table-row
@@ -169,7 +169,7 @@ An example would look like this::
    $MCONF['access'] = 'user,group';
    $MCONF['script'] = 'index.php';
    $MLANG['default']['tabs_images']['tab'] = 'moduleicon.gif';
-   $MLANG['default']['ll_ref"] = 'LLL:EXT:temp/mod2/locallang_mod.php';
+   $MLANG['default']['ll_ref"] = 'LLL:EXT:temp/mod2/locallang_mod.xml';
    ?>
 
 
@@ -255,7 +255,7 @@ need to configure only two lines, one for a "locallang" file reference
 and one for the icon image::
 
    $MLANG['default']['tabs_images']['tab'] = 'func.gif';
-   $MLANG['default']['ll_ref']='LLL:EXT:lang/locallang_mod_web_func.php';
+   $MLANG['default']['ll_ref']='LLL:EXT:lang/locallang_mod_web_func.xml';
 
 The icon reference (line 1) points to an icon image relative to the
 current directory (normally located there).
@@ -263,26 +263,18 @@ current directory (normally located there).
 The "locallang" file reference in line 2 points to a "locallang"-file
 which in this case looks like this::
 
-   <?php
-   # TYPO3 CVS ID: $Id: locallang_mod_web_func.php,v 1.5 2004/04/30 16:19:54 typo3 Exp $
-   $LOCAL_LANG = Array (
-       'default' => Array (
-           'title' => 'Advanced functions',
-           'clickAPage_content' => 'Please click a page title in the page tree.',
-           'mlang_labels_tablabel' => 'Advanced functions',
-           'mlang_labels_tabdescr' => 'You\'ll find general export and import functions here. ... sorting of pages.',
-           'mlang_tabs_tab' => 'Functions',
-       ),
-       'dk' => Array (
-           'title' => 'Avancerede funktioner',
-           'clickAPage_content' => 'Klik på en sidetitel i sidetræet.',
-           'mlang_labels_tablabel' => 'Avancerede funktioner',
-           'mlang_labels_tabdescr' => 'Her vil du finde generelle eksport og import funktioner. ... sortering af sider.',
-           'mlang_tabs_tab' => 'Funktioner',
-       ),
-   ...
-   );
-   ?>
+   <?xml version="1.0" encoding="UTF-8"?>
+   <T3locallangExt>
+     <data type="array">
+       <languageKey index="en" type="array">
+         <label index="title">Advanced functions</label>
+         <label index="clickAPage_content">Please click a page title in the page tree.</label>
+         <label index="mlang_labels_tablabel">Advanced functions</label>
+         <label index="mlang_labels_tabdescr">You'll find general export and import functions here. ... sorting of pages.</label>
+         <label index="mlang_tabs_tab">Functions</label>
+       </languageKey>
+     </data>
+   </T3locallangExt>
 
 In this locallang file, some keys are reserved words that point out
 information related to the "conf.php" file:
@@ -541,7 +533,7 @@ This is an example::
    $MCONF['access'] = 'user,group';
    $MCONF['script'] = 'index.php';
    $MLANG['default']['tabs_images']['tab'] = 'moduleicon.gif';
-   $MLANG['default']['ll_ref'] = 'LLL:EXT:temp/mod2/locallang_mod.php';
+   $MLANG['default']['ll_ref'] = 'LLL:EXT:temp/mod2/locallang_mod.xml';
    ?>
 
 It doesn't do any difference whether the module is a main- or sub-

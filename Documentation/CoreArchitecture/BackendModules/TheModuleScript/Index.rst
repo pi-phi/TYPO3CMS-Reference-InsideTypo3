@@ -23,7 +23,7 @@ backend modules. An example looks like this::
      31: require('conf.php');
      32: require($BACK_PATH . 'init.php');
      33: require($BACK_PATH . 'template.php');
-     34: $GLOBALS['LANG']->includeLLFile('EXT:temp/cm1/locallang.php');
+     34: $GLOBALS['LANG']->includeLLFile('EXT:temp/cm1/locallang.xml');
      36: require_once (PATH_t3lib . 'class.t3lib_scbase.php');
      37:     // ....(But no access check here...)
      38:     // DEFAULT initialization of a module [END]

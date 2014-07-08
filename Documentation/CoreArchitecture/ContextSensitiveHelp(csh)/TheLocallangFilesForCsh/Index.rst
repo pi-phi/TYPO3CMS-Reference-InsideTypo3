@@ -22,14 +22,14 @@ Then there are a few other rules to follow:
 
 - Observe the filename length, which should be maximum 31 chars in
   total! Since the prefix "locallang\_csh\_" takes 14 chars, the
-  extension ".php" takes four and any "subfile-suffix" (fx. ".dk") would
+  extension ".xml" takes four and any "subfile-suffix" (fx. "dk.") would
   take three, there is 31-14-4-3 = 10 chars left. So lets say you have 9
   characters to name the file to be safe.
 
   Examples where "pages" (5 chars) is the unique name::
 
-     locallang_csh_pages.php    =>   23 chars
-     locallang_csh_pages.dk.php      =>   26 chars
+     locallang_csh_pages.xml    =>   23 chars
+     dk.locallang_csh_pages.xml      =>   26 chars
 
 - Observe the label-key naming by the syntax [fieldname].[type-
   key].[special option] (see previous section)
@@ -44,8 +44,7 @@ Then there are a few other rules to follow:
   information about the database table itself - non-blank fieldnames are
   expected to point to the actual fieldnames.
 
-- For the locallang-XML files which are translated by a backend module
-  you can place images in a subfolder, "cshimages/", to where the
+- You can place images in a subfolder, "cshimages/", to where the
   locallang-file is located and they will be shown in a selector box
   inside the translation tool.
 
@@ -117,7 +116,7 @@ Syntax for the type-keys content
            "EXT:context\_help/descr\_imgs/hidden\_page.gif")
 
          You can supply a comma list of image references in order to show more
-         than one image. The image\_descr value will be splitted per linebreak
+         than one image. The image\_descr value will be split per linebreak
          and shown under each image.
 
 
@@ -175,7 +174,7 @@ Syntax for the type-keys content
          default, however overridden by this value if it is not blank.
 
          For modules (tablename prefixed "\_MOD\_") you must specify this
-         value, otherwise you will see the bare key outputted.
+         value, otherwise you will see the bare key being output.
 
 
 .. ###### END~OF~TABLE ######

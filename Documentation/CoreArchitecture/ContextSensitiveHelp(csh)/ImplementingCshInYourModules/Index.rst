@@ -11,7 +11,7 @@ Implementing CSH in your modules
 
 Implementing CSH in your own modules is a little more difficult. In
 addition to the two mandatory steps of a) creating a
-locallang\_csh\_\*.php file in your extension directory and b) calling
+locallang\_csh\_\*.xml file in your extension directory and b) calling
 the t3lib\_extMgm::addLLrefForTCAdescr() API function in the
 ext\_tables.php file you might also have to manually  *load* the
 labels and manually  *insert* the labels where you want them to
@@ -35,8 +35,8 @@ initialization of your module:
                               $GLOBALS['LANG']->loadSingleTableDescription($this->descrTable);
                       }
 
-   It's assumed that $this->MCONF equals the global $MCONF var that
-   contain module configuration - this delivers the unique module name.
+   It's assumed that $this->MCONF equals the global $MCONF variable that
+   contains module configuration - this delivers the unique module name.
 
    Then secondly -  *but most important* - is that you check for the User
    Configuration setting "edit\_showFieldHelp" (highlighted with red)
@@ -78,26 +78,23 @@ These lines assumes that
 
 The locallang\_csh file for this example would look like this::
 
-   <?php
-   /**
-   * Default  TCA_DESCR for "_MOD_web_layout"
-   */
+   <?xml version="1.0" encoding="UTF-8"?>
+   <T3locallangExt>
+     <data type="array">
+       <languageKey index="de" type="array">
+         <label index="quickEdit.description">The Quick Editor gives you direct . . .</label>
+         <label index="quickEdit.details">The Quick Editor is designed to cut . . .</label>
+         <label index="quickEdit_selElement.description">This is an overview of th. . .</label>
+         <label index="columns.description">By the "Columns" view you can control t. . .</label>
+      </languageKey>
+     </data>
+   </T3locallangExt>
 
-   $LOCAL_LANG = array (
-       'default' => array (
-           'quickEdit.description' => 'The Quick Editor gives you direct . . . ',
-           'quickEdit.details' => 'The Quick Editor is designed to cut . . .',
-           'quickEdit_selElement.description' => 'This is an overview of th. . . ',
-           'columns.description' => 'By the \"Columns\" view you can control t. . . ',
-       ),
-   );
-   ?>
-
-(Location is "sysext/cms/locallang\_csh\_weblayout.php" and in
+(Location is "sysext/cms/locallang\_csh\_weblayout.xml" and in
 ext\_tables.php for the "cms" extension you will find this line to
 associate the locallang file with CSH for the Web > Page module: t3lib\_
 extMgm::addLLrefForTCAdescr('\_MOD\_web\_layout','EXT:cms/locallang\_c
-sh\_weblayout.php'); )
+sh\_weblayout.xml'); )
 
 Notice the key " quickEdit\_selElement.description" which will provide
 the description for the help icon in the example.

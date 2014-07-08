@@ -30,7 +30,7 @@ of the backend interface:
   - *Notice:* "locallang\*.php" files is an old alternative still
     supported but deprecated; They contain the $LOCAL\_LANG array in a PHP
     script which is simply included. Old "locallang.php" files can be
-    converted to llXML files using the extension "extdeveval"
+    converted to llXML files using the extension "extdeveval".
 
 - **Localization methods:** The "language" class (from
   sysext/lang/lang.php) contains methods for requesting labels out of

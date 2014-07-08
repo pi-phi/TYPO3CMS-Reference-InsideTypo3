@@ -6,17 +6,17 @@
 .. include:: ../../../Includes.txt
 
 
-"language-splitted" syntax (deprecated)
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+"language-split" syntax (deprecated)
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 An old concept called "language-split" has been around for use with
 typically table-names, field names etc. in $TCA. This concept is based
 on a single string with labels separated by "\|" according to the
 number of system languages defined in the TYPO3\_languages constant.
-But this approach is now depricated for the future because it is not
+But this approach is now deprecated for the future because it is not
 very scalable and it's VERY hard to maintain properly. Therefore the
 "locallang" concept is required for use anywhere a value is defined to
-be "language-splitted" (LS). Instead of specifying a number of labels
+be "language-split" (LS). Instead of specifying a number of labels
 separated with "\|" you simply write a code, which refers to a
 locallang-file/label inside of that.
 

@@ -46,24 +46,22 @@ exists and its label key: $GLOBALS['LANG']->sL('LLL:[file-reference of locallang
 file]:[key-name]'). That mode is initiated by a triple L (LLL:) prefix
 of the string.
 
-The file-reference is a "locallang"-file in either PHP or XML format.
-It is not important to know in this case! Using the ".php" or ".xml"
-file ending will not matter as long as one of the files exist. TYPO3
-will look for both file extensions and use the one it finds.
+The file-reference is a "locallang"-file in XML format (or in the old and
+deprecated PHP format).
 
 If  *not* a "LLL:" string is prefixed then the input is exploded by a
 vertical bar (\|) and each part is perceived as the label for the
 corresponding language in the TYPO3\_languages constant. However this
-concept is  **depricated** since it's impossible to maintain
+concept is  **deprecated** since it's impossible to maintain
 efficiently.  *Always* use the "LLL:" references to proper locallang
-files. (See discussion of "language-splitted" syntax above).
+files. (See discussion of "language-split" syntax above).
 
 $GLOBALS['LANG']->sL() requires no manual inclusion of a locallang file since
 that is done automatically. Typically used in table and field name
 labels in $TCA or in modules where a single value from the core
 locallang file is needed.
 
-(See the example in the previous section '"language-splitted" syntax'
+(See the example in the previous section '"language-split" syntax'
 in addition)
 
 
@@ -77,7 +75,7 @@ you should not just include the file - rather use the API-function
 $GLOBALS['LANG']->includeLLFile() designed for that. There are three reasons for
 this:
 
-- If the locallang.php file is split into a main- and sub-file that
+- If the locallang.xml file is split into a main- and sub-file that
   is automatically handled by that function.
 
 - If any 'XLLFile' is configured to override the values in the default
@@ -94,14 +92,14 @@ module)::
 
    require ($BACK_PATH . 'init.php');
    require ($BACK_PATH . 'template.php');
-   $GLOBALS['LANG']->includeLLFile('EXT:setup/mod/locallang.php');
+   $GLOBALS['LANG']->includeLLFile('EXT:setup/mod/locallang.xml');
 
 This function call will load the $LOCAL\_LANG array from
-'EXT:setup/mod/locallang.php' into the global memory space and thus
-make it available to $GLOBALS['LANG']->getLL(). If 'EXT:setup/mod/locallang.php'
-does not exist but 'EXT:setup/mod/locallang.xml' does, then the latter
+'EXT:setup/mod/locallang.xml' into the global memory space and thus
+make it available to $GLOBALS['LANG']->getLL(). If 'EXT:setup/mod/locallang.xml'
+does not exist but 'EXT:setup/mod/locallang.php' does, then the latter
 is parsed, loaded and everything is the same for TYPO3. Although you
-should probably use the correct file extension in the file reference
+should use XML format and the correct file extension in the file reference
 (using ".xml" when the locallang file is actually a "locallang-XML"
 format file).
 
@@ -109,5 +107,5 @@ If you wish to not load the $LOCAL\_LANG array into global space, but
 rather have it returned in a variable, just set the second optional
 argument true like this:
 
-$myLocalLang = $GLOBALS['LANG']->includeLLFile('EXT:setup/mod/locallang.xml', 1);
+$myLocalLang = $GLOBALS['LANG']->includeLLFile('EXT:setup/mod/locallang.xml', TRUE);
 

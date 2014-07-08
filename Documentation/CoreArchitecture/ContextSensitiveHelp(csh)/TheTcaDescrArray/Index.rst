@@ -28,11 +28,11 @@ t3lib/stddb/tables.php::
    /**
     * Setting up TCA_DESCR - Context Sensitive Help
     */
-   t3lib_extMgm::addLLrefForTCAdescr('pages', 'EXT:lang/locallang_csh_pages.php');
-   t3lib_extMgm::addLLrefForTCAdescr('be_users', 'EXT:lang/locallang_csh_be_users.php');
-   t3lib_extMgm::addLLrefForTCAdescr('be_groups', 'EXT:lang/locallang_csh_be_groups.php');
-   t3lib_extMgm::addLLrefForTCAdescr('sys_filemounts', 'EXT:lang/locallang_csh_sysfilem.php');
-   t3lib_extMgm::addLLrefForTCAdescr('_MOD_tools_em', 'EXT:lang/locallang_csh_em.php');
+   t3lib_extMgm::addLLrefForTCAdescr('pages', 'EXT:lang/locallang_csh_pages.xml');
+   t3lib_extMgm::addLLrefForTCAdescr('be_users', 'EXT:lang/locallang_csh_be_users.xml');
+   t3lib_extMgm::addLLrefForTCAdescr('be_groups', 'EXT:lang/locallang_csh_be_groups.xml');
+   t3lib_extMgm::addLLrefForTCAdescr('sys_filemounts', 'EXT:lang/locallang_csh_sysfilem.xml');
+   t3lib_extMgm::addLLrefForTCAdescr('_MOD_tools_em', 'EXT:lang/locallang_csh_em.xml');
 
 The red line above is the line setting the file for the "pages" table.
 Notice that other extensions might supply additional files and add
@@ -53,29 +53,26 @@ So labels for $table is loaded - and if table is "pages" then this
 will be the result back in $TCA\_DESCR:
 
 As you can see labels are loaded from the file
-sysext/lang/locallang\_csh\_pages.php. The content of this file looks
+sysext/lang/locallang\_csh\_pages.xml. The content of this file looks
 like this (partly)::
 
-   <?php
-   /**
-   * Default  TCA_DESCR for "pages"
-   */
+   <?xml version="1.0" encoding="UTF-8"?>
+   <T3locallangExt>
+     <data type="array">
+       <languageKey index="en" type="array">
+         <label index="title.description">Enter the title of the page or folder.</label>
+         <label index="title.syntax">You must enter a page title. The field is required.</label>
 
-   $LOCAL_LANG = Array (
-       'default' => Array (
-           'title.description' => 'Enter the title of the page or folder.',
-           'title.syntax' => 'You must enter a page title. The field is required.',
+         <label index="doktype.description">Select the page type. This affects . . . ses.</label>
+         <label index="doktype.details">The 'Standard' type represents a . . . any problems).</label>
 
-           'doktype.description' => 'Select the page type. This affects . . . ses.',
-           'doktype.details' => 'The \'Standard\' type represents a . . . any problems).',
+         <label index="TSconfig.description">Page TypoScript configuration.</label>
+         <label index="TSconfig.details">Basically 'TypoScript' is a . . . alled</label>
 
-           'TSconfig.description' => 'Page TypoScript configuration.',
-           'TSconfig.details' => 'Basically \'TypoScript\' is a . . . alled).
-   ',
-           'TSconfig.syntax' => 'Basic TypoScr. . . \'Conditions\' and \'Constants\'.',
-       )
-   );
-   ?>
+         <label index="TSconfig.syntax">Basic TypoScr. . . 'Conditions' and 'Constants'.</label>
+       </languageKey>
+     </data>
+   </T3locallangExt>
 
 Notice how the actual labels in the locallang file contains periods
 (.) which defines [fieldname].[type-key].[special options]
@@ -128,19 +125,16 @@ Example
 ~~~~~~~
 
 Looking at the "context\_help" extension you will see many
-"locallang\_csh\_\*.php" files. One is named
-"locallang\_csh\_pages.php" and the first lines from that looks like
+"locallang\_csh\_\*.xml" files. One is named
+"locallang\_csh\_pages.xml" and the first lines from that looks like
 this::
 
-   <?php
-   /**
-   * Default  TCA_DESCR for "pages"
-   */
-
-   $LOCAL_LANG = Array (
-           'default' => Array (
-                   'title.description.+' => 'This is normally shown in the website navigation.',
-                   'layout.description' => 'Select a layout for the page. Any effect depends on the website template.',
+   <?xml version="1.0" encoding="UTF-8"?>
+   <T3locallangExt>
+     <data type="array">
+       <languageKey index="en" type="array">
+         <label index="title.description.+">This is normally shown in the website navigation.</label>
+         <label index="layout.description">Select a layout for the page. Any effect depends on the website template.</label>
 
 Notice the red plus-sign in the "title.description" label - this value
 is  *added* to the existing title.

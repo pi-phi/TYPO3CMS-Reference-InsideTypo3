@@ -47,7 +47,7 @@ a Function Menu on the first level you would include this code in the
            'web_func',
            'tx_temp_modfunc1',
            t3lib_extMgm::extPath($_EXTKEY).'modfunc1/class.tx_temp_modfunc1.php',
-           'LLL:EXT:temp/locallang_db.php:moduleFunction.tx_temp_modfunc1'
+           'LLL:EXT:temp/locallang_db.xml:moduleFunction.tx_temp_modfunc1'
        );
    }
 
@@ -59,7 +59,7 @@ the Wizards example above)::
            'web_func',
            'tx_temp_modfunc2',
            t3lib_extMgm::extPath($_EXTKEY).'modfunc2/class.tx_temp_modfunc2.php',
-           'LLL:EXT:temp/locallang_db.php:moduleFunction.tx_temp_modfunc2',
+           'LLL:EXT:temp/locallang_db.xml:moduleFunction.tx_temp_modfunc2',
            'wiz'
        );
    }
