@@ -18,6 +18,9 @@ conf.py:
     t3install:
     - http://docs.typo3.org/typo3cms/InstallationGuide/
     - null
+    t3security:
+    - http://docs.typo3.org/typo3cms/SecurityGuide/
+    - null
     t3tsconfig:
     - http://docs.typo3.org/typo3cms/TSconfigReference/
     - null
