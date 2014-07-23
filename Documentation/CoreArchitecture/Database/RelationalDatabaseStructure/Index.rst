@@ -61,7 +61,7 @@ One table which has a special status is the "pages" table. This table
 is the backbone of TYPO3 as it provides the hierarchical page
 structure into which all other TYPO3 managed records are positioned.
 
-You can understand the "pages" table as folders on a hard disc and all
+You can understand the "pages" table as folders on a hard disk and all
 other records (configured in $TCA) as files which can belong to one of
 these folders. As a unique identification of any record, "pages"
 record or otherwise, the "uid" field contains an integer value. And
