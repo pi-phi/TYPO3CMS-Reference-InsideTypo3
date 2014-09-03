@@ -103,9 +103,9 @@ should use XML format and the correct file extension in the file reference
 (using ".xml" when the locallang file is actually a "locallang-XML"
 format file).
 
-If you wish to not load the $LOCAL\_LANG array into global space, but
+If you don't want to load the :code:`$LOCAL_LANG` array into global space, but
 rather have it returned in a variable, just set the second optional
-argument true like this:
+argument to :code:`false` like this::
 
-$myLocalLang = $GLOBALS['LANG']->includeLLFile('EXT:setup/mod/locallang.xml', TRUE);
+	$myLocalLang = $GLOBALS['LANG']->includeLLFile('EXT:setup/mod/locallang.xml', FALSE);
 
