@@ -454,6 +454,17 @@ $MCONF
    $MCONF keys
          ::
 
+            $MCONF['navigationComponentId']
+
+   Description
+         If set to 'typo3-pagetree' the module will have a pagetree so the module belongs not to the web mainmodule.
+         If set to FALSE the module will have no pagetree so the module belongs to the web mainmodule.
+
+.. container:: table-row
+
+   $MCONF keys
+         ::
+
             $MCONF['shy']
 
    Description
